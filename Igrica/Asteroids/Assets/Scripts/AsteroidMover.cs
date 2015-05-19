@@ -5,6 +5,8 @@ public class AsteroidMover : MonoBehaviour {
 	public float speed = -5;
 	void Start()
 	{
-		GetComponent<Rigidbody> ().velocity = transform.forward * speed;
+		Vector3 brzina = new Vector3 (-1, 0, -0.5f) * 5;
+		GetComponent<Rigidbody> ().velocity = brzina;
+
 	}
 }
