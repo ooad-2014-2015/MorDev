@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Aplic
 {
     /// <summary>
-    /// Interaction logic for MenagerView.xaml
+    /// Interaction logic for ManagerView.xaml
     /// </summary>
-    public partial class MenagerView : Window
+    public partial class ManagerView : Window
     {
-        public MenagerView()
+        public ManagerView()
         {
             InitializeComponent();
         }

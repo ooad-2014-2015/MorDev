@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Text.RegularExpressions;
-using MySql.Data.MySqlClient;
+//using MySql.Data.MySqlClient;
 
 namespace Aplic.Models
 {

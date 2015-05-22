@@ -59,8 +59,8 @@
     <Compile Include="DirektorView.xaml.cs">
       <DependentUpon>DirektorView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MenagerView.xaml.cs">
-      <DependentUpon>MenagerView.xaml</DependentUpon>
+    <Compile Include="ManagerView.xaml.cs">
+      <DependentUpon>ManagerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Atrakcija.cs" />
     <Compile Include="Models\Izvjestaj.cs" />
@@ -93,7 +93,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MenagerView.xaml">
+    <Page Include="ManagerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
