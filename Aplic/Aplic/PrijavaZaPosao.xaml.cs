@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace Aplic
 {
     /// <summary>
-    /// Interaction logic for UnosPonudeW.xaml
+    /// Interaction logic for PrijavaZaPosao.xaml
     /// </summary>
-    public partial class UnosPonudeW : Window
+    public partial class PrijavaZaPosao : Window
     {
-        public UnosPonudeW()
+        public PrijavaZaPosao()
         {
             InitializeComponent();
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }

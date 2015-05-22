@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace Aplic
 {
     /// <summary>
-    /// Interaction logic for UnosKlijentaW.xaml
+    /// Interaction logic for DirektorView.xaml
     /// </summary>
-    public partial class UnosKlijentaW : Window
+    public partial class DirektorView : Window
     {
-        public UnosKlijentaW()
+        public DirektorView()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

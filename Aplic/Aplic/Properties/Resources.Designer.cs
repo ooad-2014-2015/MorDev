@@ -253,6 +253,16 @@ namespace Aplic.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap solar_system {
+            get {
+                object obj = ResourceManager.GetObject("solar_system", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Space_Art {
             get {
                 object obj = ResourceManager.GetObject("Space_Art", resourceCulture);
