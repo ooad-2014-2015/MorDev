@@ -8,9 +8,9 @@ using System.Text.RegularExpressions;
 
 namespace Aplic.Models
 {
-    public abstract class Osoba : INotifyPropertyChanged, IDataErrorInfo
+    public abstract class Osoba 
     {
-
+        /*
         private int id;
         private string ime; 
         private string prezime;
@@ -176,7 +176,7 @@ namespace Aplic.Models
         #endregion
 
 
-        
+        */
 
 
 

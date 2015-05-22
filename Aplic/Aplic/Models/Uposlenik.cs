@@ -11,16 +11,83 @@ namespace Aplic.Models
 {
     public class Uposlenik : Osoba, INotifyPropertyChanged, IDataErrorInfo
     {
-        private string vrstaPosla;
-        
+        private int id;
+        private string ime;
+        private string prezime;
+        private string email;
+        private string broj_telefona;
 
-        public Uposlenik(string firstName, string lastName, string email, string brTel, string vrstaP, DateTime datZap)
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        public string Ime
+        {
+            get { return ime; }
+            set
+            {
+                ime = value;
+                OnPropertyChanged("Ime");
+            }
+        }
+
+        public string Prezime
+        {
+            get { return prezime; }
+            set
+            {
+                prezime = value;
+                OnPropertyChanged("Prezime");
+            }
+        }
+
+        public string Email
+        {
+            get { return email; }
+            set
+            {
+                email = value;
+                OnPropertyChanged("Email");
+            }
+        }
+
+        public string Broj_telefona
+        {
+            get { return broj_telefona; }
+            set
+            {
+                broj_telefona = value;
+                OnPropertyChanged("Broj_telefona");
+            }
+        }
+
+        private string username, password;
+        private DateTime datumRegistracije;
+        /*
+        public Klijent(string firstName, string lastName, string email, string brTel, string vrstaP, DateTime datZap)
             : base(firstName, lastName, email, brTel)
         {
             this.vrstaPosla = vrstaP;
             this.datumZaposlenja = datZap;
+        }*/
+
+        public string Username
+        {
+            get { return username; }
+            set { username = value; OnPropertyChanged("Username"); }
         }
 
+        public string Password
+        {
+            get { return password; }
+            set { password = value; OnPropertyChanged("Password"); }
+        }
+
+
+        private string vrstaPosla;
 
         public string VrstaPosla
         {

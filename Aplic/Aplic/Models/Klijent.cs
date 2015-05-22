@@ -10,6 +10,60 @@ namespace Aplic.Models
 {
     public class Klijent:Osoba, INotifyPropertyChanged, IDataErrorInfo
     {
+
+        private int id;
+        private string ime; 
+        private string prezime;
+        private string email;
+        private string broj_telefona;
+
+        
+        public int Id
+        {
+            get { return id; }
+            set { id = value;  }
+        }
+
+        public string Ime
+        {
+            get { return ime; }
+            set 
+            { 
+                ime = value; 
+                OnPropertyChanged("Ime"); 
+            }
+        }
+
+        public string Prezime
+        {
+            get { return prezime; }
+            set 
+            { 
+                prezime = value; 
+                OnPropertyChanged("Prezime"); 
+            }
+        }
+
+        public string Email
+        {
+            get { return email; }
+            set 
+            { 
+                email = value; 
+                OnPropertyChanged("Email"); 
+            }
+        }
+
+        public string Broj_telefona
+        {
+            get { return broj_telefona; }
+            set
+            { 
+                broj_telefona = value; 
+                OnPropertyChanged("Broj_telefona"); 
+            }
+        }
+
         private string username,password;
         private DateTime datumRegistracije;
         /*
