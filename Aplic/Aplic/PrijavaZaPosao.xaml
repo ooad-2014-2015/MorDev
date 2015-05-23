@@ -5,7 +5,7 @@
 
     <Grid HorizontalAlignment="Left" Width="389" RenderTransformOrigin="0.5,0.523" Margin="0,0,0,7">
         <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <GroupBox Header="" HorizontalAlignment="Left" Margin="10,26,0,33" Width="359">
+        <GroupBox Header="" HorizontalAlignment="Left" Margin="20,27,0,32" Width="359">
             <ComboBox HorizontalAlignment="Left" Height="25" Margin="203,232,0,0" VerticalAlignment="Top" Width="114">
                 <Button Content="Pilot"/>
                 <Button Content="Stujardesa"/>
@@ -14,26 +14,28 @@
             </ComboBox>
         </GroupBox>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="229,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114"/>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="229,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114"/>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="229,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114"/>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="229,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="229,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="229,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="229,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114"/>
         <Label Content="Ime:" HorizontalAlignment="Left" Height="26" Margin="33,38,0,0" VerticalAlignment="Top" Width="126"/>
-        <Label Content="Prezime:" HorizontalAlignment="Left" Height="26" Margin="33,80,0,0" VerticalAlignment="Top" Width="63"/>
-        <Label Content="Datum rođenja:" HorizontalAlignment="Left" Height="28" Margin="33,127,0,0" VerticalAlignment="Top" Width="107"/>
-        <Label Content="JMBG:" HorizontalAlignment="Left" Height="26" Margin="33,170,0,0" VerticalAlignment="Top" Width="97"/>
+        <Label Content="Prezime:" HorizontalAlignment="Left" Height="26" Margin="33,75,0,0" VerticalAlignment="Top" Width="63"/>
+        <Label Content="Datum rođenja:" HorizontalAlignment="Left" Height="28" Margin="33,111,0,0" VerticalAlignment="Top" Width="107"/>
+        <Label Content="JMBG:" HorizontalAlignment="Left" Height="26" Margin="34,195,0,0" VerticalAlignment="Top" Width="97"/>
         <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Label Content="Broj telefona:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.479,10.774" Margin="33,214,0,0"/>
-        <Label Content="CV:" HorizontalAlignment="Left" Height="26" Margin="33,296,0,0" VerticalAlignment="Top" Width="80"/>
+        <Label Content="Broj telefona:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.479,10.774" Margin="34,235,0,0"/>
+        <Label Content="CV:" HorizontalAlignment="Left" Height="26" Margin="34,308,0,0" VerticalAlignment="Top" Width="80"/>
         <Button Content="Pošalji" HorizontalAlignment="Left" Height="26" Margin="246,510,0,0" VerticalAlignment="Top" Width="105"/>
-        <DatePicker HorizontalAlignment="Left" Height="28" Margin="229,127,0,0" VerticalAlignment="Top" Width="114"/>
-        <Label Content="Tip posla:" HorizontalAlignment="Left" Height="24" Margin="33,258,0,0" VerticalAlignment="Top" Width="71"/>
-        <RichTextBox HorizontalAlignment="Left" Margin="33,327,0,99" Width="310">
+        <DatePicker HorizontalAlignment="Left" Height="28" Margin="229,110,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label Content="Tip posla:" HorizontalAlignment="Left" Height="25" Margin="34,272,0,0" VerticalAlignment="Top" Width="71"/>
+        <RichTextBox HorizontalAlignment="Left" Margin="33,339,0,99" Width="310">
             <FlowDocument>
                 <Paragraph>
                     <Run Text=""/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="229,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="114"/>
+        <Label Content="Label" HorizontalAlignment="Left" Height="28" Margin="34,152,0,0" VerticalAlignment="Top" Width="70"/>
 
     </Grid>
 </Window>

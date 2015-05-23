@@ -77,6 +77,11 @@
     <Compile Include="Models\Recenzija.cs" />
     <Compile Include="Models\Rezervacija.cs" />
     <Compile Include="Models\Uposlenik.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\ManagerViewModel.cs" />
+    <Compile Include="ViewModels\PrijavaKorisnikaViewModel.cs" />
+    <Compile Include="ViewModels\PrijavaZaPosaoViewModel.cs" />
+    <Compile Include="ViewModels\RelayCommand.cs" />
     <Page Include="DirektorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -274,6 +279,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

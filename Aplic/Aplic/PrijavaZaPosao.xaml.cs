@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Aplic.ViewModels;
 
 namespace Aplic
 {
@@ -19,9 +20,12 @@ namespace Aplic
     /// </summary>
     public partial class PrijavaZaPosao : Window
     {
+
+
         public PrijavaZaPosao()
         {
             InitializeComponent();
         }
+       
     }
 }

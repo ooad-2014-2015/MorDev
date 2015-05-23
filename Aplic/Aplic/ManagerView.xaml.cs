@@ -19,9 +19,10 @@ namespace Aplic
     /// </summary>
     public partial class ManagerView : Window
     {
+        private MainWindow mainWindow;
         public ManagerView()
         {
-            InitializeComponent();
+
         }
     }
 }

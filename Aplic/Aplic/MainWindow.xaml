@@ -6,7 +6,7 @@
     <Window.Background>
         <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/solar-system.jpg"/>
     </Window.Background>
-    <Grid Margin="0,0,0,4" HorizontalAlignment="Left" Width="1079">
+    <Grid Margin="0,0,0,-3" HorizontalAlignment="Left" Width="1079">
         <GroupBox Header="" HorizontalAlignment="Left" Height="222" Margin="876,513,0,0" VerticalAlignment="Top" Width="193">
             <Label Content="Username:" Foreground="White"  HorizontalAlignment="Left" FontSize="11" Height="25" Margin="0,10,0,0" VerticalAlignment="Top" Width="63"/>
 
@@ -194,7 +194,7 @@
         <StackPanel HorizontalAlignment="Left" Height="100" Margin="482,313,0,0" VerticalAlignment="Top" Width="100"/>
         <StackPanel HorizontalAlignment="Left" Height="161" Margin="25,15,0,0" VerticalAlignment="Top" Width="557"/>
         <GroupBox Header="" HorizontalAlignment="Left" Height="66" Margin="876,433,0,0" VerticalAlignment="Top" Width="193">
-            <Button Content="Oglas za posao" Background="Gray" HorizontalAlignment="Left" Height="35" Margin="25,2,0,0" VerticalAlignment="Top" Width="125" />
+            <Button Content="Oglas za posao" Background="Gray" HorizontalAlignment="Left" Height="35" Margin="25,2,0,0" VerticalAlignment="Top" Width="125" Command="{Binding Oglas}"  />
         </GroupBox>
         <TextBox HorizontalAlignment="Left" Height="24" Margin="954,541,0,0" TextWrapping="Wrap" TabIndex="1" Text="" VerticalAlignment="Top" Width="102" />
         <TextBox HorizontalAlignment="Left" Height="24" Margin="954,580,0,0" TextWrapping="Wrap" TabIndex="2" Text="" VerticalAlignment="Top" Width="102" />
