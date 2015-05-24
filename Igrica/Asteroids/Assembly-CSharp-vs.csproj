@@ -46,15 +46,16 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AsteroidMover.cs" />
+     <Compile Include="Assets\Scripts\AsteroidLogic.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
-     <Compile Include="Assets\Scripts\MainButtonLogic.cs" />
-     <Compile Include="Assets\Scripts\Moving.cs" />
-     <Compile Include="Assets\Scripts\RandomRotator.cs" />
-     <Compile Include="Assets\Scripts\Scroll.cs" />
+     <Compile Include="Assets\Scripts\HSLoader.cs" />
+     <Compile Include="Assets\Scripts\IgracLogic.cs" />
+     <Compile Include="Assets\Scripts\IntroAudioLogic.cs" />
+     <Compile Include="Assets\Scripts\IntroButtonLogic.cs" />
+     <Compile Include="Assets\Scripts\MetakLogic.cs" />
+     <Compile Include="Assets\Scripts\PozadinaLogic.cs" />
      <Compile Include="Assets\Scripts\UnistiNaGranici.cs" />
-     <Compile Include="Assets\Scripts\ZvukSlider.cs" />
-     <Compile Include="Assets\Ucitavnje.cs" />
+     <Compile Include="Assets\Scripts\UnistiVremenski.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

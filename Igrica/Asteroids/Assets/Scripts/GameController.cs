@@ -2,54 +2,198 @@
 using System.Collections;
 using UnityEngine.UI;
 
+// Factory pattern
+public class AsteroidFactory {
+	public void napraviAsteroid(int brojBodova)
+	{
+		if (brojBodova < 50) {
+			var dummy = new Asteroid50 ();
+		} else if (brojBodova < 100) {
+			var dummy = new Asteroid100 ();
+		} else if (brojBodova < 150) {
+			var dummy = new Asteroid150 ();
+		} else if (brojBodova < 200) {
+			var dummy = new Asteroid200 ();
+		} else {
+			var dummy = new Asteroid500();
+		}
+	}
+}
 
-public class GameController : MonoBehaviour {
+public abstract class Asteroid {
+	public GameObject[] _asteroidi;
+	public Vector3 pozicija;
+	public Quaternion rotacija;
+	public Vector3 brzina;
+	public Asteroid (){}
+}
+
+public class Asteroid50 : Asteroid {
+	public Asteroid50(){
+		pozicija = new Vector3 (Random.Range(-17.5f, 17.5f), 0, 20);
+		rotacija = Quaternion.identity;
+		brzina = new Vector3 (0, 0, -1) * 5;
+		GameObject asteroid = MonoBehaviour.Instantiate (GameObject.Find("GameController").GetComponent<GameController>().asteroidi[Random.Range (0, 6)], pozicija, rotacija) as GameObject;
+		asteroid.GetComponent<Rigidbody>().velocity = brzina;
+	}
+}
+
+public class Asteroid100 : Asteroid {
+	public Asteroid100(){
+		GameObject.Find ("GameController").GetComponent<GameController> ().time = 0.4f;
+		pozicija = new Vector3 (Random.Range (-17.5f, 17.5f), 0, 20);
+		rotacija = Quaternion.identity;
+		brzina = new Vector3 (0, 0, -1) * 10;
+		GameObject asteroid = MonoBehaviour.Instantiate (GameObject.Find("GameController").GetComponent<GameController>().asteroidi[Random.Range (0, 9)], pozicija, rotacija) as GameObject;
+		asteroid.GetComponent<Rigidbody>().velocity = brzina;
+	}
+}
+
+public class Asteroid150 : Asteroid {
+	public Asteroid150(){
+		int opcija = Random.Range (1, 3);
+		if(opcija == 1) pozicija = new Vector3 (Random.Range (-17.5f, 17.5f), 0, 20);
+		else pozicija = new Vector3 (18, 0, Random.Range(0, 20));
+		rotacija = Quaternion.identity;
+		brzina = new Vector3 (-0.5f, 0, -1) * 15;
+		GameObject asteroid = MonoBehaviour.Instantiate (GameObject.Find("GameController").GetComponent<GameController>().asteroidi[Random.Range (0, 9)], pozicija, rotacija) as GameObject;
+		asteroid.GetComponent<Rigidbody>().velocity = brzina;
+	}
+}
+
+public class Asteroid200 : Asteroid {
+	public Asteroid200(){
+		GameObject.Find ("GameController").GetComponent<GameController> ().time = 0.3f;
+		int opcija = Random.Range (1, 3);
+		if(opcija == 1) pozicija = new Vector3 (Random.Range (-17.5f, 17.5f), 0, 20);
+		else pozicija = new Vector3 (18, 0, Random.Range(0, 20));
+		rotacija = Quaternion.identity;
+		brzina = new Vector3 (-0.7f, 0, -1) * 20;
+		GameObject asteroid = MonoBehaviour.Instantiate (GameObject.Find("GameController").GetComponent<GameController>().asteroidi[Random.Range (0, 9)], pozicija, rotacija) as GameObject;
+		asteroid.GetComponent<Rigidbody>().velocity = brzina;
+	}
+}
+
+public class Asteroid500 : Asteroid {
+	public Asteroid500(){
+		GameObject.Find ("GameController").GetComponent<GameController> ().time = 0.2f;
+		int opcija = Random.Range (1, 3);
+		if(opcija == 1) pozicija = new Vector3 (Random.Range (-17.5f, 17.5f), 0, 20);
+		else pozicija = new Vector3 (18, 0, Random.Range(0, 20));
+		rotacija = Quaternion.identity;
+		brzina = new Vector3 (-1f, 0, -1f) * 25;
+		GameObject asteroid = MonoBehaviour.Instantiate (GameObject.Find("GameController").GetComponent<GameController>().asteroidi[Random.Range (0, 9)], pozicija, rotacija) as GameObject;
+		asteroid.GetComponent<Rigidbody>().velocity = brzina;
+	}
+}
+
+// Observer pattern
+public interface ISubject {
+	void registerObserver(IObserver o);
+	void unregisterObserver (IObserver o);
+    void notifyObserver();
+}
+
+public interface IObserver{
+	void update (int brojBodova);
+}
+
+public class GameController : MonoBehaviour, ISubject {
 	public GameObject[] asteroidi;
-	public GameObject pozadina;
-	public Scroll _scroll;
-
-	int brojZivota;
+	public bool mrtav;
+	private ArrayList _observers;
 	public int brojBodova;
 	public Text txtBodovi;
-	float dT = 0.0f;
-	float time = 1.0f;
+	public Text tBodoviFinal;
+	public Text ime;
+	public GameObject gameOverPanel;
 
+	public void registerObserver (IObserver newObserver)
+	{
+		_observers.Add (newObserver);
+	}
+
+	public void unregisterObserver (IObserver deleteObserver)
+	{
+		int observerIndex = _observers.IndexOf (deleteObserver);
+		_observers.RemoveAt (observerIndex);
+
+	}
+
+	public void notifyObserver ()
+	{
+		foreach(IObserver observer in _observers)
+		{
+			observer.update(brojBodova);
+		}
+	}
+
+
+
+	float dT = 0.0f;
+	public float time = 0.5f;
+	public AsteroidFactory asteroidFactory;
+	public GameObject pozadina;
+	public GameObject igrac;
 	void Start () {
-		brojZivota = 3;
+		GameObject.Find ("IntroAudio").GetComponent<AudioSource> ().volume = 0.3f;
+		asteroidFactory = new AsteroidFactory ();
+		_observers = new ArrayList ();
 		brojBodova = 0;
+		mrtav = false;
 		txtBodovi.text = brojBodova.ToString ();
-		pozadina = GameObject.FindWithTag ("Pozadina");
-		_scroll = pozadina.GetComponent<Scroll> ();
-	
+		pozadina = GameObject.Find("Pozadina");
+		registerObserver (pozadina.GetComponent<PozadinaLogic> ());
+	    igrac = GameObject.FindWithTag ("Igrac");
+		registerObserver (igrac.GetComponent<IgracLogic> ());
 	}
 	
 	void Update () {
-		if (dT > time) {
+	if (!mrtav) {
+			if (dT > time) {
+				asteroidFactory.napraviAsteroid (brojBodova);
+				dT = 0;
+			}
+			notifyObserver ();
+			txtBodovi.text = brojBodova.ToString ();
+			dT += Time.deltaTime;
+		}
+	}
 
-			//brojBodova += 10;
-			txtBodovi.text = brojBodova.ToString();
-			dT = 0.0f;
-			if(brojBodova < 500)
-			{
-				Vector3 pozicija = new Vector3(18, 0, Random.Range(2, 20));
-				Quaternion rotacija = Quaternion.identity;
+	public void gameOver()
+	{
+		gameOverPanel.GetComponent<CanvasGroup> ().interactable = true;
+		gameOverPanel.GetComponent<CanvasGroup> ().alpha = 1;
+		tBodoviFinal.text = brojBodova.ToString ();
+	}
 
-				GameObject asteroid = Instantiate(asteroidi[Random.Range(0, 8)], pozicija, rotacija) as GameObject; 
-				asteroid.GetComponent<Rigidbody>().velocity = new Vector3(-1, 0, -1) * 10;
+	public void unosRezultata()
+	{
+		if (ime.text != string.Empty) {
+			string _ime = ime.text;
+			int oldScore;
+			string oldName;
+			for(int i = 0; i < 10; i++){
+				if(PlayerPrefs.HasKey(i + "HS")) {
+					if(PlayerPrefs.GetInt(i + "HS") < brojBodova)
+					{
+						oldScore = PlayerPrefs.GetInt(i + "HS");
+						oldName = PlayerPrefs.GetString(i +"HSName");
+						PlayerPrefs.SetInt(i + "HS", brojBodova);
+						PlayerPrefs.SetString(i + "HSName", _ime);
 
-				if(_scroll.BrzinaRotacijeX < Random.Range(-50, 50))
-				{
-				_scroll.BrzinaRotacijeX += 2;
-					if(_scroll.BrzinaRotacijeX == 0) _scroll.BrzinaRotacijeX = 1;
-				
-					_scroll.BrzinaRotacijeY += 3;
-					if(_scroll.BrzinaRotacijeY == 0) _scroll.BrzinaRotacijeY = 1;
+						brojBodova = oldScore;
+						_ime = oldName;
+					}
+				} else {
+					PlayerPrefs.SetInt(i + "HS", brojBodova);
+					PlayerPrefs.SetString(i + "HSName", _ime);
+					brojBodova = 0;
+					_ime = "";
 				}
-
-			    //pozicija = new Vector3(Random.Range(-10, 10), 0, 20);
-				//Instantiate(asteroidi[Random.Range(0, 8)], pozicija, rotacija);
+				Application.LoadLevel("hs");
 			}
 		}
-		dT += Time.deltaTime;
 	}
 }
+
