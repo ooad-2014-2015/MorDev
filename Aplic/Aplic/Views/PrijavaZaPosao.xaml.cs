@@ -11,18 +11,26 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Aplic.ViewModels;
 
 namespace Aplic
 {
     /// <summary>
-    /// Interaction logic for ManagerView.xaml
+    /// Interaction logic for PrijavaZaPosao.xaml
     /// </summary>
-    public partial class ManagerView : Window
+    public partial class PrijavaZaPosao : Window
     {
-        private MainWindow mainWindow;
-        public ManagerView()
+
+
+        public PrijavaZaPosao()
+        {
+            InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
+       
     }
 }

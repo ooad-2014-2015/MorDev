@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Aplic.ViewModels
 {
-   public  class ManagerViewModel
+    public class ManagerViewModel
     {
-       public MainWindowViewModel Parent { get; set; }
-       public ManagerViewModel(MainWindowViewModel P)
-       {
-           Parent = P;
-       }
+        public MainWindowViewModel Parent { get; set; }
+        public ManagerViewModel(MainWindowViewModel P)
+        {
+            Parent = P;
+        }
     }
 }

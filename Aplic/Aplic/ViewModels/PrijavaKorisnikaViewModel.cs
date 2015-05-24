@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using System.ComponentModel;
 using Aplic.Models;
 
 
 namespace Aplic.ViewModels
 {
-   public class PrijavaKorisnikaViewModel:INotifyPropertyChanged
+    public class PrijavaKorisnikaViewModel : INotifyPropertyChanged
     {
-              public MainWindowViewModel Parent { get; set; }
+        public MainWindowViewModel Parent { get; set; }
 
-       public PrijavaKorisnikaViewModel(MainWindowViewModel P)
+        public PrijavaKorisnikaViewModel(MainWindowViewModel P)
         {
-            Parent =P;
+            Parent = P;
         }
 
 
@@ -36,7 +35,7 @@ namespace Aplic.ViewModels
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
-        } 
+        }
 
 
     }

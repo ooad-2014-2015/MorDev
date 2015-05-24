@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.ComponentModel;
 using Aplic.Models;
-using Aplic;
+
 
 
 
@@ -14,32 +14,48 @@ using Aplic;
 
 namespace Aplic.ViewModels
 {
-   public class MainWindowViewModel : INotifyPropertyChanged
+    public class MainWindowViewModel : INotifyPropertyChanged
     {
-       string Username, Pasword;
-       //deklaracija formi
+        string Username, Pasword;
+
+
+        Klijent klijent;
+
+        //deklaracija formi
         PrijavaZaPosao pZaPosao;
         PrijavaKorisnika pKorisnika;
         ManagerView managerView;
+        DirektorView direktorView;
+
+
         //deklaracija viewModela
         PrijavaZaPosaoViewModel pZaPosaoViewModel;
         PrijavaKorisnikaViewModel pKorisnikaViewModel;
         ManagerViewModel managerViewModel;
-
-        Klijent klijent;
-
+        DirektorViewModel direktorViewModel;
 
 
+        //commande
         public ICommand Oglas { get; set; }
+        public ICommand Prijava { get; set; }
+        public ICommand Izbor { get; set; }
         public ICommand UserLogin { get; set; }
+
+        //konstruktor
         public MainWindowViewModel()
         {
-            pZaPosaoViewModel = new PrijavaZaPosaoViewModel(this);
-            Oglas = new RelayCommand(prikaziOglasFormu);
 
+            Oglas = new RelayCommand(_prikaziOglasFormu);
+            Prijava = new RelayCommand(_prikaziFormuZaPrijavu);
+            Izbor = new RelayCommand(_prikaziFormuMiliD);
+
+
+            pZaPosaoViewModel = new PrijavaZaPosaoViewModel(this);
             pKorisnikaViewModel = new PrijavaKorisnikaViewModel(this);
-            managerViewModel= new ManagerViewModel(this);
-            //vezat za dogadaj ubacivanja klijenta
+            managerViewModel = new ManagerViewModel(this);
+            direktorViewModel = new DirektorViewModel(this);
+
+            // ubacivanje klijenta
             klijent = new Klijent();
 
         }
@@ -47,30 +63,44 @@ namespace Aplic.ViewModels
 
 
 
-        private void prikaziOglasFormu(object parametar)
-        {            
-              pZaPosao = new PrijavaZaPosao();
-              pZaPosao.DataContext = pZaPosaoViewModel;
-              pZaPosao.Show();
+        private void _prikaziOglasFormu(object parametar)
+        {
+            pZaPosao = new PrijavaZaPosao();
+            pZaPosao.DataContext = pZaPosaoViewModel;
+            pZaPosao.Show();
         }
 
-        private void prikaziManagerFormu(object parametar)
+        private void _prikaziFormuZaPrijavu(object parametar)
+        {
+            pKorisnika = new PrijavaKorisnika();
+            pKorisnika.DataContext = pKorisnikaViewModel;
+            pKorisnika.Show();
+        }
+
+
+        private void _prikaziFormuMiliD(object parametar)
         {
             if (Username == "Manager" && Pasword == "Managerpasword")
             {
                 managerView = new ManagerView();
                 managerView.DataContext = managerViewModel;
-                managerView.Show();  
-            }        
+                managerView.Show();
+            }
+            else if(Username=="Direktor" && Pasword=="Direktorpasword")
+            {
+                direktorView = new DirektorView();
+                direktorView.DataContext = direktorViewModel;
+                direktorView.Show();
+            }
             else
             {
-                //MessageBox....nije pravilna sifra
+                //klijent iz baze ili MessageBox....nije pravilna sifra
             }
         }
 
 
 
-        private void userLogin(object parametar)
+        private void _userLogin(object parametar)
         {
             /*
               Baza.BazaPodataka bp = new Baza.BazaPodataka();
@@ -86,12 +116,22 @@ namespace Aplic.ViewModels
         }
 
 
-        
+
 
 
 
         //geteri i seteri
+        public string Pasword1
+        {
+            get { return Pasword; }
+            set { Pasword = value; }
+        }
 
+        public string Username1
+        {
+            get { return Username; }
+            set { Username = value; }
+        }
 
         //interface
 
@@ -103,5 +143,5 @@ namespace Aplic.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-     }
+    }
 }

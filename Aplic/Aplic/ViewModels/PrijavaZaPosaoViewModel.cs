@@ -8,13 +8,16 @@ using Aplic.Models;
 
 namespace Aplic.ViewModels
 {
-   public class PrijavaZaPosaoViewModel:INotifyPropertyChanged
+    public class PrijavaZaPosaoViewModel : INotifyPropertyChanged
     {
-       public MainWindowViewModel Parent { get; set; }
+        public MainWindowViewModel parent { get; set; }
 
-       public PrijavaZaPosaoViewModel(MainWindowViewModel P)
+        Prijavnica prijavnica;
+
+
+        public PrijavaZaPosaoViewModel(MainWindowViewModel P)
         {
-            Parent =P;
+            parent = P;
         }
 
 
@@ -24,6 +27,14 @@ namespace Aplic.ViewModels
 
 
 
+
+
+
+        public Prijavnica Prijavnica
+        {
+            get { return prijavnica; }
+            set { prijavnica = value; }
+        }
 
         //impl interfacea
 

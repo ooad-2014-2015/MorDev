@@ -70,7 +70,7 @@
 
 
 
-        <Button Content="" Margin="220,245,700,382"  >
+        <Button Content="" Margin="211,238,700,382"  >
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Grid>
@@ -87,7 +87,7 @@
             </Button.Template>
         </Button>
 
-        <Button Content="" Margin="10,322,919,309" >
+        <Button Content="" Margin="0,313,919,309" >
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Grid>
@@ -140,7 +140,7 @@
             </Button.Template>
         </Button>
 
-        <Button Content="" Margin="816,83,147,570"  >
+        <Button Content="" Margin="810,83,147,570"  >
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Grid>
@@ -200,9 +200,9 @@
         <TextBox HorizontalAlignment="Left" Height="24" Margin="954,580,0,0" TextWrapping="Wrap" TabIndex="2" Text="" VerticalAlignment="Top" Width="102" />
 
         <Label Content="Pasword:" HorizontalAlignment="Left" Foreground="White"   FontSize="11" Height="24" Margin="879,580,0,0" VerticalAlignment="Top" Width="53"/>
-        <Button Content="Log In"  Background="Gray" HorizontalAlignment="Left" TabIndex="3" Height="27" Margin="964,619,0,0" VerticalAlignment="Top" Width="81"/>
+        <Button Content="Log In"  Background="Gray" HorizontalAlignment="Left" TabIndex="3" Height="27" Margin="964,619,0,0" VerticalAlignment="Top" Width="81" Command="{Binding Izbor}"/>
         <Label Content="Ukoliko nemate korisnički račun" Foreground="White"   FontSize="10" HorizontalAlignment="Left" Height="23" Margin="885,663,0,0" VerticalAlignment="Top" Width="160"/>
-        <Button Content="Sign Up" Background="Gray" HorizontalAlignment="Left" Height="27" TabIndex="4" Margin="964,686,0,0" VerticalAlignment="Top" Width="81"/>
+        <Button Content="Sign Up" Background="Gray" HorizontalAlignment="Left" Height="27" TabIndex="4" Margin="964,686,0,0" VerticalAlignment="Top" Width="81" Command="{Binding Oglas}"/>
 
     </Grid>
 </Window>

@@ -62,11 +62,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DirektorView.xaml.cs">
-      <DependentUpon>DirektorView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerView.xaml.cs">
-      <DependentUpon>ManagerView.xaml</DependentUpon>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Atrakcija.cs" />
     <Compile Include="Models\Izvjestaj.cs" />
@@ -83,47 +80,50 @@
     <Compile Include="Models\Recenzija.cs" />
     <Compile Include="Models\Rezervacija.cs" />
     <Compile Include="Models\Uposlenik.cs" />
+    <Compile Include="ViewModels\DirektorViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ManagerViewModel.cs" />
     <Compile Include="ViewModels\PrijavaKorisnikaViewModel.cs" />
     <Compile Include="ViewModels\PrijavaZaPosaoViewModel.cs" />
     <Compile Include="ViewModels\RelayCommand.cs" />
-    <Page Include="DirektorView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
+    <Compile Include="Views\DirektorView.xaml.cs">
+      <DependentUpon>DirektorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManagerView.xaml.cs">
+      <DependentUpon>ManagerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrijavaKorisnika.xaml.cs">
+      <DependentUpon>PrijavaKorisnika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrijavaZaPosao.xaml.cs">
+      <DependentUpon>PrijavaZaPosao.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="ManagerView.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="PrijavaKorisnika.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Views\DirektorView.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="PrijavaZaPosao.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Views\ManagerView.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PrijavaKorisnika.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PrijavaZaPosao.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PrijavaKorisnika.xaml.cs">
-      <DependentUpon>PrijavaKorisnika.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PrijavaZaPosao.xaml.cs">
-      <DependentUpon>PrijavaZaPosao.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -24,12 +24,11 @@ namespace Aplic
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
         public MainWindow()
         {
-           // this.DataContext = MainWindowViewModel.Instance();
             InitializeComponent();
-           
+            base.DataContext = mainWindowViewModel;
         }
 
 
@@ -38,6 +37,6 @@ namespace Aplic
 
 
 
-     
+
     }
 }
