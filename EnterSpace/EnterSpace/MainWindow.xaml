@@ -1,0 +1,209 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="EnterSpace.MainWindow"
+        Title="EnterSpace" Height="797.97" Width="1089.224" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/solar-system.jpg"/>
+    </Window.Background>
+    <Grid Margin="0,0,0,-3" HorizontalAlignment="Left" Width="1079">
+        <GroupBox Header="" HorizontalAlignment="Left" Height="222" Margin="876,513,0,0" VerticalAlignment="Top" Width="193">
+            <Label Content="Username:" Foreground="White"  HorizontalAlignment="Left" FontSize="11" Height="25" Margin="0,10,0,0" VerticalAlignment="Top" Width="63"/>
+
+        </GroupBox>
+        <Image HorizontalAlignment="Left" Height="61" Margin="848,17,0,0" VerticalAlignment="Top" Width="163" Source="pack://siteoforigin:,,,/Resources/c6079afaa64cf1a6ae3c7adc009e1ed1.jpg"/>
+        <Image HorizontalAlignment="Left" Height="90" Margin="964,0,0,0" VerticalAlignment="Top" Width="92" Source="pack://siteoforigin:,,,/Resources/satelite.png"/>
+
+
+        <Button Content="" Margin="626,418,221,137" >
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Ellipse>
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/world.png"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+        <Button Content="" Margin="879,263,23,361" >
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Ellipse>
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/Mars.png"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+        <Button Content="" Margin="252,590,458,-134"  >
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Ellipse>
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/Jupiter.png"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+
+        <Button Content="" Margin="211,238,700,382"  >
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Ellipse>
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/Saturn.png"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button Content="" Margin="0,313,919,309" >
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Ellipse>
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/Uranus.png"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+        <Button Content="" Margin="619,121,350,552"  >
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Ellipse>
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/Neptune.png"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+        <Button Content="" Margin="504,176,511,529"  >
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Ellipse>
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/Venus.png"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button Content="" Margin="810,83,147,570"  >
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Ellipse>
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/Pluto.png"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+        <Button Content="" Margin="190,448,735,181" >
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Ellipse>
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/Mercury.png"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button Content="" Margin="606,472,371,201" RenderTransformOrigin="-3.767,1.733" >
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+
+                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Ellipse>
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/Moon_Phase_Full.png"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <StackPanel HorizontalAlignment="Left" Height="100" Margin="482,313,0,0" VerticalAlignment="Top" Width="100"/>
+        <StackPanel HorizontalAlignment="Left" Height="161" Margin="25,15,0,0" VerticalAlignment="Top" Width="557"/>
+        <GroupBox Header="" HorizontalAlignment="Left" Height="66" Margin="876,433,0,0" VerticalAlignment="Top" Width="193">
+            <Button Content="Oglas za posao" Background="Gray" HorizontalAlignment="Left" Height="35" Margin="25,2,0,0" VerticalAlignment="Top" Width="125" Command="{Binding Oglas}"  />
+        </GroupBox>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="954,541,0,0" TextWrapping="Wrap" TabIndex="1"  VerticalAlignment="Top" Width="102" Text="{Binding Path=Username1, Mode=TwoWay}" />
+
+        <Label Content="Pasword:" HorizontalAlignment="Left" Foreground="White"   FontSize="11" Height="24" Margin="879,580,0,0" VerticalAlignment="Top" Width="53"/>
+        <Button Content="Log In"  Background="Gray" HorizontalAlignment="Left" TabIndex="3" Height="27" Margin="964,619,0,0" VerticalAlignment="Top" Width="81" Command="{Binding Izbor}"/>
+        <Label Content="Ukoliko nemate korisnički račun" Foreground="White"   FontSize="10" HorizontalAlignment="Left" Height="23" Margin="885,663,0,0" VerticalAlignment="Top" Width="160"/>
+        <Button Content="Sign Up" Background="Gray" HorizontalAlignment="Left" Height="27" TabIndex="4" Margin="964,686,0,0" VerticalAlignment="Top" Width="81" Command="{Binding Prijava}"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="954,541,0,0" TextWrapping="Wrap" TabIndex="1"  VerticalAlignment="Top" Width="102" Text="{Binding Username1, Mode=TwoWay}" />
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="954,580,0,0" TextWrapping="Wrap" TabIndex="2" VerticalAlignment="Top" Width="102" Text="{Binding Pasword1, Mode=TwoWay}" />
+
+    </Grid>
+</Window>

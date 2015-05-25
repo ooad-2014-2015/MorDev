@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.ComponentModel;
+using EnterSpace.Models;
+
+
+namespace EnterSpace.Models
+{
+    public class PrijavaKorisnikaViewModel : INotifyPropertyChanged
+    {
+        public MainWindowViewModel Parent { get; set; }
+
+        public PrijavaKorisnikaViewModel(MainWindowViewModel P)
+        {
+            Parent = P;
+        }
+
+
+
+
+
+
+
+
+
+        //impl interfacea
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+
+    }
+}
