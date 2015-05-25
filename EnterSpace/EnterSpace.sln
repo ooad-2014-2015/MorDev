@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
+# Visual Studio Express 2013 for Windows Desktop
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterSpace", "EnterSpace\EnterSpace.csproj", "{9F85A535-0DDD-44AA-87B3-EC8FEE87DC50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{241964F4-109D-45A8-B183-5C42A20AA071}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9F85A535-0DDD-44AA-87B3-EC8FEE87DC50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F85A535-0DDD-44AA-87B3-EC8FEE87DC50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F85A535-0DDD-44AA-87B3-EC8FEE87DC50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{241964F4-109D-45A8-B183-5C42A20AA071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{241964F4-109D-45A8-B183-5C42A20AA071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{241964F4-109D-45A8-B183-5C42A20AA071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{241964F4-109D-45A8-B183-5C42A20AA071}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
