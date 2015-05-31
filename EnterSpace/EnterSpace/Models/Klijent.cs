@@ -66,13 +66,8 @@ namespace EnterSpace.Models
 
         private string username,password;
         private DateTime datumRegistracije;
-        /*
-        public Klijent(string firstName, string lastName, string email, string brTel, string vrstaP, DateTime datZap)
-            : base(firstName, lastName, email, brTel)
-        {
-            this.vrstaPosla = vrstaP;
-            this.datumZaposlenja = datZap;
-        }*/
+        
+        
 
         public string Username
         {
@@ -90,6 +85,19 @@ namespace EnterSpace.Models
         {
             get { return DatumRegistracije; }
             set { datumRegistracije = value; OnPropertyChanged("DatumRegistracije"); }
+        }
+
+        public Klijent() { }
+        public Klijent(int id, string fn, string ln, string email, string brTel, string u, string pass)
+        {
+            this.id = id;
+            this.ime = fn;
+            this.prezime = ln;
+            this.email = email;
+            this.broj_telefona = brTel;
+            this.username = u;
+            this.password = pass;
+
         }
 
 

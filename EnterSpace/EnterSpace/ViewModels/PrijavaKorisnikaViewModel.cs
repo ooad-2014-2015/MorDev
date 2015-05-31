@@ -7,15 +7,20 @@ using System.Windows.Input;
 using System.ComponentModel;
 using EnterSpace.Models;
 using EnterSpace.ViewModels;
+using System.Windows;
+
+
 
 namespace EnterSpace.Models
 {
     public class PrijavaKorisnikaViewModel : INotifyPropertyChanged
     {
+        public Action CloseAction { get; set; }
         public MainWindowViewModel Parent { get; set; }
 
         DAL.Baza db = new DAL.Baza();
         public ICommand UnosKlijenta { get; set; }
+        
 
         private DAL.Klijent klijent;
 	    public DAL.Klijent Klijent
@@ -42,17 +47,24 @@ namespace EnterSpace.Models
             klijent.DatumRegistracije = DateTime.Now;
             klijent.Username = Klijent.Ime+Klijent.Prezime;
             klijent.Password = Klijent.Ime + Klijent.Prezime+klijent.Id;
+
+            EnterSpace.Models.Klijent k = new EnterSpace.Models.Klijent(
+            klijent.Id,
+            klijent.Ime,
+            klijent.Prezime,
+            klijent.Email,
+            klijent.DatumRegistracije.ToString(),
+            klijent.Username ,
+            klijent.Password );
+
             
+
             db.Klijenti.Add(klijent);
             db.SaveChanges();
+            System.Windows.MessageBox.Show("Vasi podaci su uspjesno uneseni u bazu!");
+            
         }
-
-
-
-
-
-
-        //impl interfacea
+       
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)

@@ -17,7 +17,7 @@ namespace EnterSpace.Models
         private string email;
         private string broj_telefona;
         private string username, password;
-        private DateTime datumRegistracije;
+        //private DateTime datumRegistracije;
 
         public int Id
         {

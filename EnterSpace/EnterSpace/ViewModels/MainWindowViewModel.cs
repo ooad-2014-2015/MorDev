@@ -11,10 +11,6 @@ using System.Windows;
 
 
 
-
-
-
-
 namespace EnterSpace
 {
     public class MainWindowViewModel : INotifyPropertyChanged
@@ -23,6 +19,7 @@ namespace EnterSpace
 #region deklaracija atributa
         string username, pasword;
         Klijent klijent;
+        DAL.Baza db = new DAL.Baza();
 
 
 #endregion
@@ -62,6 +59,7 @@ namespace EnterSpace
 
             // ubacivanje klijenta
             klijent = new Klijent();
+            var klijenti = db.Klijenti.ToList();
 
         }
 #endregion
@@ -85,13 +83,13 @@ namespace EnterSpace
 
         private void _prikaziFormuMiliD(object parametar)
         {
-            if (username == "manager" && pasword == "1")
+            if (Username1 == "manager" && Password1 == "1")
             {
                 managerView = new ManagerView();
                 managerView.DataContext = managerViewModel;
                 managerView.Show();
             }
-            else if(username=="direktor" && pasword=="1")
+            else if (Username1 == "direktor" && Password1 == "1")
             {
                 direktorView = new DirektorView();
                 direktorView.DataContext = direktorViewModel;
@@ -99,8 +97,27 @@ namespace EnterSpace
             }
             else
             {
-                MessageBox.Show("Pogrešan username ili password", "Greška");
-                //klijent iz baze ili MessageBox....nije pravilna sifra
+
+                using(DAL.Baza db = new DAL.Baza())
+                {
+                    bool p = false;
+                    foreach(var k in db.Klijenti)
+                    {
+                        if (k.Username == Username1 && k.Password == Password1)
+                        {
+                            MessageBox.Show("Uspjesno ste prijavljeni na sistem!", "Uspjesna prijava");
+                            p=true;
+                        }
+                    }
+                     
+                            
+                 if (p==false)  
+                 MessageBox.Show("Pogrešan username ili password", "Greška");
+                        
+                   
+                   
+            }
+
             }
         }
 
@@ -131,7 +148,7 @@ namespace EnterSpace
             get { return klijent; }
             set { klijent = value; }
         }
-        public string Pasword1
+        public string Password1
         {
             get { return pasword; }
             set { pasword = value; }
