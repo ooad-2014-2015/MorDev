@@ -203,7 +203,7 @@
         <Label Content="Ukoliko nemate korisnički račun" Foreground="White"   FontSize="10" HorizontalAlignment="Left" Height="23" Margin="885,663,0,0" VerticalAlignment="Top" Width="160"/>
         <Button Content="Sign Up" Background="Gray" HorizontalAlignment="Left" Height="27" TabIndex="4" Margin="964,686,0,0" VerticalAlignment="Top" Width="81" Command="{Binding Prijava}"/>
         <TextBox HorizontalAlignment="Left" Height="24" Margin="954,541,0,0" TextWrapping="Wrap" TabIndex="1"  VerticalAlignment="Top" Width="102" Text="{Binding Username1, Mode=TwoWay}" />
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="954,580,0,0" TextWrapping="Wrap" TabIndex="2" VerticalAlignment="Top" Width="102" Text="{Binding Pasword1, Mode=TwoWay}" />
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="954,580,0,0" TextWrapping="Wrap" TabIndex="2" VerticalAlignment="Top" Width="102" Text="{Binding Password1, Mode=TwoWay}" />
 
     </Grid>
 </Window>
