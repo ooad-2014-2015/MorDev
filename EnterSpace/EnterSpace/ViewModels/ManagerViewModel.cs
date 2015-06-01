@@ -86,7 +86,7 @@ namespace EnterSpace.Models
             uposlenik.DatumRegistracije = DateTime.Now;
             uposlenik.Username = Uposlenik.Ime + Uposlenik.Prezime;
             uposlenik.Password = Uposlenik.Ime + Uposlenik.Prezime + uposlenik.Id;
-
+            
             db.Uposlenici.Add(uposlenik);
             db.SaveChanges();
             System.Windows.MessageBox.Show("Uspjesno ste dodali novog uposlenika!");
