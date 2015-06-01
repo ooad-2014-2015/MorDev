@@ -6,7 +6,7 @@
     <TabControl HorizontalAlignment="Left" Height="455" VerticalAlignment="Top" Width="581">
         <TabItem Header="Ponude" ContentStringFormat="Ponude">
             <Grid Background="#FFE5E5E5" Margin="0,1,-5,-6">
-                <ListBox HorizontalAlignment="Left" Height="254" Margin="10,110,0,0" VerticalAlignment="Top" Width="221"/>
+                <ListBox HorizontalAlignment="Left" Height="254" Margin="10,110,0,0" VerticalAlignment="Top" Width="221" ItemsSource="{Binding Path=uposlenici, Mode=OneWay}" />
                 <Label Content="Sve ponude:" FontSize="11" HorizontalAlignment="Left" Height="29" Margin="10,81,0,0" VerticalAlignment="Top" Width="104"/>
                 <GroupBox Header="" HorizontalAlignment="Left" Height="386" Margin="236,21,0,0" VerticalAlignment="Top" Width="306">
                     <Button Content="Odustani" TabIndex="10" HorizontalAlignment="Left" Height="31" Margin="186,320,0,0" VerticalAlignment="Top" Width="82"/>

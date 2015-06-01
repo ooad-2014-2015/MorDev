@@ -16,6 +16,7 @@ namespace EnterSpace.Models
         public MainWindowViewModel parent { get; set; }
         public ICommand DodajNovuPonudu { get; set; }
         public ICommand DodajNovogUposlenika { get; set; }
+      
 
         public ManagerViewModel(MainWindowViewModel P)
         {

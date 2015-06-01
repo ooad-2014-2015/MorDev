@@ -9,12 +9,19 @@ using EnterSpace.ViewModels;
 using EnterSpace.Models;
 using System.Windows;
 
+using System.Collections.ObjectModel;
+
+using System.Threading;
+
+
+
 
 
 namespace EnterSpace
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
+       
 
 #region deklaracija atributa
         string username, pasword;
@@ -36,6 +43,11 @@ namespace EnterSpace
         PrijavaKorisnikaViewModel pKorisnikaViewModel;
         ManagerViewModel managerViewModel;
         DirektorViewModel direktorViewModel;
+
+        Thread nit;
+        //liste
+        
+
 #endregion
  #region commande
         public ICommand Oglas { get; set; }
@@ -61,11 +73,46 @@ namespace EnterSpace
             klijent = new Klijent();
             var klijenti = db.Klijenti.ToList();
 
+
+            //za nit - ovaj dio ubaciti u metodu koja se bude bindala za dugme rezervisi
+            nit = new Thread(() => generisiNarudzbu());
+            nit.IsBackground = true;
+            nit.Start(); 
+
         }
 #endregion
 
 
 #region metode
+       private void generisiNarudzbu()
+        {
+            var ponude = db.Ponude.ToList();
+            var rezervacije = db.Rezervacije.ToList();
+
+           foreach(var r in rezervacije)
+           {
+               int brojRezervacija=0;
+               DateTime pamtiDatum=DateTime.Now;
+               foreach(var p in ponude)
+               {                  
+                    if(r.Ponuda.Id==p.Id) //broji samo rezervacije od te ponude koju posmatra
+                    {
+                        brojRezervacija++;
+                        pamtiDatum = r.DatumPolaska;
+                    }
+                    if(brojRezervacija > p.Kapacitet)
+                    {
+                        MessageBox.Show("Kapacitet ponude popunjen!");
+                    }
+               }
+               if ((pamtiDatum - DateTime.Now).TotalDays==3  ) 
+               {
+               //kreiranje NArudzebnice i ubacivanje narudzbenice u bazu
+               }
+           }
+        }
+
+
         private void _prikaziOglasFormu(object parametar)
         {
             pZaPosao = new PrijavaZaPosao();
