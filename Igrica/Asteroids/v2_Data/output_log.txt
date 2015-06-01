@@ -1,12 +1,13 @@
 Initialize engine version: 5.0.1f1 (5a2e8fe35a68)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 9.0c [nvd3dum.dll 9.18.13.4788]
-    Renderer: NVIDIA GeForce GT 540M  
+    Version:  Direct3D 9.0c [nvd3dum.dll 8.15.11.8593]
+    Renderer: NVIDIA GeForce 8400 GS (Microsoft Corporation - WDDM v1.1)
     Vendor:   NVIDIA
-    VRAM:     971 MB (via DXGI)
+    VRAM:     884 MB (via DXGI)
     Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 NULL=1 RESZ=0 SlowINTZ=0
 Begin MonoManager ReloadAssembly
+<<<<<<< HEAD
 Platform assembly: C:\Users\mirzet\Desktop\IV_SEM\OOAD\PROJEKAT_GIT\MorDev\Igrica\Asteroids\v2_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading C:\Users\mirzet\Desktop\IV_SEM\OOAD\PROJEKAT_GIT\MorDev\Igrica\Asteroids\v2_Data\Managed\UnityEngine.dll into Unity Child Domain
 Platform assembly: C:\Users\mirzet\Desktop\IV_SEM\OOAD\PROJEKAT_GIT\MorDev\Igrica\Asteroids\v2_Data\Managed\Assembly-CSharp.dll (this message is harmless)
@@ -15,9 +16,21 @@ Platform assembly: C:\Users\mirzet\Desktop\IV_SEM\OOAD\PROJEKAT_GIT\MorDev\Igric
 Loading C:\Users\mirzet\Desktop\IV_SEM\OOAD\PROJEKAT_GIT\MorDev\Igrica\Asteroids\v2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 - Completed reload, in  0.072 seconds
 desktop: 1920x1080 59Hz; virtual: 1920x1080 at 0,0
+=======
+Platform assembly: C:\Users\Dzenana\MorDev\Igrica\Asteroids\v2_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Dzenana\MorDev\Igrica\Asteroids\v2_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Dzenana\MorDev\Igrica\Asteroids\v2_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Dzenana\MorDev\Igrica\Asteroids\v2_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Dzenana\MorDev\Igrica\Asteroids\v2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Dzenana\MorDev\Igrica\Asteroids\v2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.084 seconds
+desktop: 1440x900 60Hz; virtual: 1440x900 at 0,0
+>>>>>>> db02b66310fdeb6cb37dd2077fb06248d0255872
 <RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
+<<<<<<< HEAD
 Platform assembly: C:\Users\mirzet\Desktop\IV_SEM\OOAD\PROJEKAT_GIT\MorDev\Igrica\Asteroids\v2_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\mirzet\Desktop\IV_SEM\OOAD\PROJEKAT_GIT\MorDev\Igrica\Asteroids\v2_Data\Managed\System.dll (this message is harmless)
 Setting up 2 worker threads for Enlighten.
@@ -134,4 +147,82 @@ UnloadTime: 0.678307 ms
 
 Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 279.
 Total: 0.330290 ms (FindLiveObjects: 0.024725 ms CreateObjectMapping: 0.020993 ms MarkObjects: 0.271043 ms  DeleteObjects: 0.012129 ms)
+=======
+Platform assembly: C:\Users\Dzenana\MorDev\Igrica\Asteroids\v2_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Dzenana\MorDev\Igrica\Asteroids\v2_Data\Managed\System.dll (this message is harmless)
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1720 -> priority: 1 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.831640 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 419.
+Total: 0.598000 ms (FindLiveObjects: 0.083080 ms CreateObjectMapping: 0.031800 ms MarkObjects: 0.456880 ms  DeleteObjects: 0.020280 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.802760 ms
+
+Unloading 173 unused Assets to reduce memory usage. Loaded Objects now: 240.
+Total: 0.662480 ms (FindLiveObjects: 0.068800 ms CreateObjectMapping: 0.031160 ms MarkObjects: 0.263600 ms  DeleteObjects: 0.292480 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.852840 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 240.
+Total: 0.361320 ms (FindLiveObjects: 0.037600 ms CreateObjectMapping: 0.017200 ms MarkObjects: 0.286920 ms  DeleteObjects: 0.012680 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.677800 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 240.
+Total: 0.334000 ms (FindLiveObjects: 0.028240 ms CreateObjectMapping: 0.017080 ms MarkObjects: 0.270920 ms  DeleteObjects: 0.011840 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.746880 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 240.
+Total: 0.356560 ms (FindLiveObjects: 0.035040 ms CreateObjectMapping: 0.016800 ms MarkObjects: 0.286680 ms  DeleteObjects: 0.011840 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.648840 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 240.
+Total: 0.325640 ms (FindLiveObjects: 0.032120 ms CreateObjectMapping: 0.016760 ms MarkObjects: 0.256480 ms  DeleteObjects: 0.013800 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.610360 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 240.
+Total: 0.348480 ms (FindLiveObjects: 0.035880 ms CreateObjectMapping: 0.016760 ms MarkObjects: 0.277080 ms  DeleteObjects: 0.012560 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.703200 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 240.
+Total: 0.356200 ms (FindLiveObjects: 0.034680 ms CreateObjectMapping: 0.016560 ms MarkObjects: 0.286040 ms  DeleteObjects: 0.012360 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.623360 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 240.
+Total: 0.355720 ms (FindLiveObjects: 0.041440 ms CreateObjectMapping: 0.016640 ms MarkObjects: 0.279320 ms  DeleteObjects: 0.011840 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.636160 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 240.
+Total: 0.356240 ms (FindLiveObjects: 0.033280 ms CreateObjectMapping: 0.016400 ms MarkObjects: 0.282640 ms  DeleteObjects: 0.017600 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.645400 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 240.
+Total: 0.361720 ms (FindLiveObjects: 0.033200 ms CreateObjectMapping: 0.016480 ms MarkObjects: 0.287480 ms  DeleteObjects: 0.018080 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Shader 'Legacy Shaders/Reflective/Bumped Specular': fallback shader 'Legacy Shaders/Reflective/Bumped Diffuse' not found
+UnloadTime: 0.870640 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 278.
+Total: 0.424920 ms (FindLiveObjects: 0.052200 ms CreateObjectMapping: 0.018000 ms MarkObjects: 0.332040 ms  DeleteObjects: 0.016400 ms)
+>>>>>>> db02b66310fdeb6cb37dd2077fb06248d0255872
 
