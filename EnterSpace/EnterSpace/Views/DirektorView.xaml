@@ -13,7 +13,12 @@
             <TabItem Header="Uposlenici">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Svi uposlenici:" FontSize="11" HorizontalAlignment="Left" Height="29" Margin="19,19,0,0" VerticalAlignment="Top" Width="104"/>
-                    <ListBox HorizontalAlignment="Left" Height="204" Margin="10,53,0,0" VerticalAlignment="Top" Width="390"/>
+                    <DataGrid AutoGenerateColumns="False" HorizontalAlignment="Left" Height="108" Margin="19,53,0,0" VerticalAlignment="Top" Width="363"
+                    Name="dataGrid1" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="99,209,0,0" Name="comboBox1"
+                    VerticalAlignment="Top" Width="120" ItemsSource="{Binding Path=Uposlenik.Ime}"
+                    DisplayMemberPath="Naziv"
+                    SelectedValue="{Binding Path=Uposlenik.Ime}"/>
                 </Grid>
             </TabItem>
         </TabControl>

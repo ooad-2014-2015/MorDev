@@ -11,20 +11,20 @@
                 <GroupBox Header="" HorizontalAlignment="Left" Height="386" Margin="236,21,0,0" VerticalAlignment="Top" Width="306">
                     <Button Content="Odustani" TabIndex="10" HorizontalAlignment="Left" Height="31" Margin="186,320,0,0" VerticalAlignment="Top" Width="82"/>
                 </GroupBox>
-                <TextBox HorizontalAlignment="Left" TabIndex="1" Height="26" Margin="402,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130"/>
-                <TextBox HorizontalAlignment="Left" TabIndex="2" Height="26" Margin="402,79,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130"/>
-                <TextBox HorizontalAlignment="Left" TabIndex="3" Height="26" Margin="402,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130"/>
-                <TextBox HorizontalAlignment="Left" TabIndex="3" Height="26" Margin="402,141,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130"/>
-                <TextBox HorizontalAlignment="Left" TabIndex="4" Height="26" Margin="402,172,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130"/>
+                <TextBox HorizontalAlignment="Left" TabIndex="1" Height="26" Margin="402,48,0,0" TextWrapping="Wrap" Text="{Binding Path=Ponuda.Naziv, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="130"/>
+                <TextBox HorizontalAlignment="Left" TabIndex="2" Height="26" Margin="402,79,0,0" TextWrapping="Wrap" Text="{Binding Path=Ponuda.Opis, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="130"/>
+                <TextBox HorizontalAlignment="Left" TabIndex="3" Height="26" Margin="402,110,0,0" TextWrapping="Wrap" Text="{Binding Path=Ponuda.Smjestaj, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="130"/>
+                <TextBox HorizontalAlignment="Left" TabIndex="3" Height="26" Margin="402,141,0,0" TextWrapping="Wrap" Text="{Binding Path=Ponuda.TrajanjeDana, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="130"/>
+                <TextBox HorizontalAlignment="Left" TabIndex="4" Height="26" Margin="402,172,0,0" TextWrapping="Wrap" Text="{Binding Path=Ponuda.Polazak, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="130"/>
                 <ComboBox HorizontalAlignment="Left" TabIndex="5" Height="31" Margin="402,203,0,0" VerticalAlignment="Top" Width="130">
                     <Button Content="Evropa"/>
                     <Button Content="Azija"/>
                     <Button Content="Amerika"/>
                     <Button Content="Tihi ocean"/>
                 </ComboBox>
-                <TextBox HorizontalAlignment="Left" TabIndex="6" Height="26" Margin="402,239,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130"/>
-                <TextBox HorizontalAlignment="Left" TabIndex="7" Height="26" Margin="402,270,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130"/>
-                <TextBox HorizontalAlignment="Left" TabIndex="8" Height="26" Margin="402,301,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130"/>
+                <TextBox HorizontalAlignment="Left" TabIndex="6" Height="26" Margin="402,239,0,0" TextWrapping="Wrap" Text="{Binding Path=Ponuda.MjestoPovratka, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="130"/>
+                <TextBox HorizontalAlignment="Left" TabIndex="7" Height="26" Margin="402,270,0,0" TextWrapping="Wrap" Text="{Binding Path=Ponuda.Kapacitet, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="130"/>
+                <TextBox HorizontalAlignment="Left" TabIndex="8" Height="26" Margin="402,301,0,0" TextWrapping="Wrap" Text="{Binding Path=Ponuda.Cijena, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="130"/>
                 <Label Content="Opis" HorizontalAlignment="Left" Height="26" Margin="268,79,0,0" VerticalAlignment="Top" Width="109"/>
                 <Label Content="Smještaj:" HorizontalAlignment="Left" Height="25" Margin="268,111,0,0" VerticalAlignment="Top" Width="71"/>
                 <Label Content="Trajanje:" HorizontalAlignment="Left" Height="26" Margin="268,141,0,0" VerticalAlignment="Top" Width="104"/>
@@ -33,7 +33,7 @@
                 <Label Content="Mjesto povratka:" HorizontalAlignment="Left" Height="26" Margin="268,239,0,0" VerticalAlignment="Top" Width="153"/>
                 <Label Content="Kapacitet:" HorizontalAlignment="Left" Height="30" Margin="268,270,0,0" VerticalAlignment="Top" Width="71" RenderTransformOrigin="4.211,10.067"/>
                 <Label Content="Cijena:" HorizontalAlignment="Left" Height="30" Margin="268,305,0,0" VerticalAlignment="Top" Width="71"/>
-                <Button Content="Dodaj" TabIndex="9" HorizontalAlignment="Left" Height="31" Margin="339,357,0,0" VerticalAlignment="Top" Width="82"/>
+                <Button Content="Dodaj" TabIndex="9" HorizontalAlignment="Left" Height="31" Margin="339,357,0,0" VerticalAlignment="Top" Width="82" Command="{Binding DodajNovuPonudu}"/>
                 <Image HorizontalAlignment="Left" Height="78" Margin="129,21,0,0" VerticalAlignment="Top" Width="75" Source="/EnterSpace;component/Resources/1431834674_offers.png"/>
                 <Label Content="Naziv:" HorizontalAlignment="Left" Height="26" Margin="268,53,0,0" VerticalAlignment="Top" Width="109"/>
                 <Button Content="Izmjeni" HorizontalAlignment="Left" Height="30" Margin="141,377,0,0" VerticalAlignment="Top" Width="90"/>
