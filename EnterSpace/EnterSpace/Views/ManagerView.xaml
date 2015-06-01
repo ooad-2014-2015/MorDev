@@ -52,17 +52,17 @@
                     <Label Content="Ime:" HorizontalAlignment="Left" Height="26" Margin="36,73,0,0" VerticalAlignment="Top" Width="61"/>
                 </GroupBox>
                 <Image HorizontalAlignment="Left" Height="78" Margin="132,21,0,0" VerticalAlignment="Top" Width="75" Source="/EnterSpace;component/Resources/1431831992_user.png" OpacityMask="Black" Grid.RowSpan="2"/>
-                <Button Content="Dodaj" TabIndex="9" HorizontalAlignment="Left" Height="31" Margin="339,298,0,0" VerticalAlignment="Top" Width="82" Grid.Row="1"/>
+                <Button Content="Dodaj" TabIndex="9" HorizontalAlignment="Left" Height="31" Margin="339,298,0,0" VerticalAlignment="Top" Width="82" Grid.Row="1" Command="{Binding DodajNovogUposlenika}"/>
                 <Label Content="Prezime:" HorizontalAlignment="Left" Height="27" Margin="290,79,0,0" VerticalAlignment="Top" Width="61" RenderTransformOrigin="0.852,0.259" Grid.Row="1"/>
-                <Label Content="JMBG:" HorizontalAlignment="Left" Height="34" Margin="290,110,0,0" VerticalAlignment="Top" Width="96" Grid.Row="1"/>
-                <Label Content="Datum rođenja:" HorizontalAlignment="Left" Height="27" Margin="290,140,0,0" VerticalAlignment="Top" Width="96" Grid.Row="1"/>
-                <Label Content="Broj telefona:" HorizontalAlignment="Left" Height="27" Margin="290,172,0,0" VerticalAlignment="Top" Width="87" RenderTransformOrigin="0.391,-0.889" Grid.Row="1"/>
+                <Label Content="Email:" HorizontalAlignment="Left" Height="34" Margin="290,110,0,0" VerticalAlignment="Top" Width="96" Grid.Row="1"/>
+                <Label Content="Broj telefona:" HorizontalAlignment="Left" Height="27" Margin="290,140,0,0" VerticalAlignment="Top" Width="96" Grid.Row="1"/>
+                <Label Content="Vrsta posla:" HorizontalAlignment="Left" Height="27" Margin="290,172,0,0" VerticalAlignment="Top" Width="87" RenderTransformOrigin="0.391,-0.889" Grid.Row="1"/>
                 <Button Content="Odustani" TabIndex="10" HorizontalAlignment="Left" Height="31" Margin="452,298,0,0" VerticalAlignment="Top" Width="82" Grid.Row="1"/>
-                <TextBox HorizontalAlignment="Left" TabIndex="1" Height="26" Margin="404,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130" Grid.Row="1"/>
-                <TextBox HorizontalAlignment="Left" TabIndex="1" Height="26" Margin="404,79,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130" Grid.Row="1"/>
-                <TextBox HorizontalAlignment="Left" TabIndex="1" Height="26" Margin="404,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130" Grid.Row="1"/>
-                <TextBox HorizontalAlignment="Left" TabIndex="1" Height="26" Margin="404,141,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130" Grid.Row="1"/>
-                <TextBox HorizontalAlignment="Left" TabIndex="1" Height="26" Margin="404,172,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="130" Grid.Row="1"/>
+                <TextBox HorizontalAlignment="Left" TabIndex="1" Height="26" Margin="404,48,0,0" TextWrapping="Wrap" Text="{Binding Path=Uposlenik.Ime, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="130" Grid.Row="1"/>
+                <TextBox HorizontalAlignment="Left" TabIndex="1" Height="26" Margin="404,79,0,0" TextWrapping="Wrap" Text="{Binding Path=Uposlenik.Prezime, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="130" Grid.Row="1"/>
+                <TextBox HorizontalAlignment="Left" TabIndex="1" Height="26" Margin="404,110,0,0" TextWrapping="Wrap" Text="{Binding Path=Uposlenik.Email, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="130" Grid.Row="1"/>
+                <TextBox HorizontalAlignment="Left" TabIndex="1" Height="26" Margin="404,141,0,0" TextWrapping="Wrap" Text="{Binding Path=Uposlenik.Broj_telefona, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="130" Grid.Row="1"/>
+                <TextBox HorizontalAlignment="Left" TabIndex="1" Height="26" Margin="404,172,0,0" TextWrapping="Wrap" Text="{Binding Path=Uposlenik.VrstaPosla, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Top" Width="130" Grid.Row="1"/>
                 <Button Content="Izmjeni" HorizontalAlignment="Left" Height="30" Margin="141,318,0,0" VerticalAlignment="Top" Width="90" Grid.Row="1"/>
             </Grid>
 
