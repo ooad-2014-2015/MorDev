@@ -1,24 +1,19 @@
 ﻿<Window x:Class="EnterSpace.DirektorView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Direktor" Height="375" Width="459">
+        Title="Direktor" Height="375" Width="700">
     <Grid Margin="0,0,0,13">
-        <TabControl HorizontalAlignment="Left" Height="310" Margin="10,21,0,0" VerticalAlignment="Top" Width="420"  >
+        <TabControl HorizontalAlignment="Left" Height="310" Margin="10,21,0,0" VerticalAlignment="Top" Width="672"  >
             <TabItem Header="Ponude">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Sve ponude:" FontSize="11" HorizontalAlignment="Left" Height="29" Margin="19,19,0,0" VerticalAlignment="Top" Width="104"/>
-                    <ListBox HorizontalAlignment="Left" Height="204" Margin="10,53,0,0" VerticalAlignment="Top" Width="390"/>
+                    <DataGrid Name="dataGrid2" DataContext="{Binding Path=Ponude}" ItemsSource="{Binding}" CanUserAddRows="False" />
                 </Grid>
             </TabItem>
             <TabItem Header="Uposlenici">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Svi uposlenici:" FontSize="11" HorizontalAlignment="Left" Height="29" Margin="19,19,0,0" VerticalAlignment="Top" Width="104"/>
-                    <DataGrid AutoGenerateColumns="False" HorizontalAlignment="Left" Height="108" Margin="19,53,0,0" VerticalAlignment="Top" Width="363"
-                    Name="dataGrid1" />
-                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="99,209,0,0" Name="comboBox1"
-                    VerticalAlignment="Top" Width="120" ItemsSource="{Binding Path=Uposlenik.Ime}"
-                    DisplayMemberPath="Naziv"
-                    SelectedValue="{Binding Path=Uposlenik.Ime}"/>
+                    <DataGrid Name="dataGrid1" DataContext="{Binding Path=Uposlenici}" ItemsSource="{Binding}" CanUserAddRows="False" />
                 </Grid>
             </TabItem>
         </TabControl>

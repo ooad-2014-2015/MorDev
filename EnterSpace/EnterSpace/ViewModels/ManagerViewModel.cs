@@ -8,6 +8,7 @@ using System.ComponentModel;
 using EnterSpace.Models;
 using EnterSpace.ViewModels;
 using System.Windows;
+using System.Collections.ObjectModel;
 namespace EnterSpace.Models
 {
     public class ManagerViewModel
@@ -22,13 +23,37 @@ namespace EnterSpace.Models
         {
             parent = P;
             var uposlenici = db.Uposlenici.ToList();
+            listaUposlenika = new ObservableCollection<DAL.Uposlenik>(uposlenici);
+
             var ponude = db.Ponude.ToList();
+            listaPonuda = new ObservableCollection<DAL.Ponuda>(ponude);
+
             uposlenik = new DAL.Uposlenik();
             ponuda = new DAL.Ponuda();
             DodajNovuPonudu = new RelayCommand(_unesiPonudu);
             DodajNovogUposlenika = new RelayCommand(_unesiUposlenika);
             _ispisiUposlenike();
             _ispisiPonude();
+        }
+
+        private ObservableCollection<DAL.Uposlenik> listaUposlenika;
+        public ObservableCollection<DAL.Uposlenik> Uposlenici
+        {
+            get { return listaUposlenika; }
+            set
+            {
+                listaUposlenika = value;
+            }
+        }
+
+        private ObservableCollection<DAL.Ponuda> listaPonuda;
+        public ObservableCollection<DAL.Ponuda> Ponude
+        {
+            get { return listaPonuda; }
+            set
+            {
+                listaPonuda = value;
+            }
         }
 
         private DAL.Uposlenik uposlenik;

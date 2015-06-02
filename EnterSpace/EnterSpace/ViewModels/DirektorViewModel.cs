@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EnterSpace.Models;
 using EnterSpace.ViewModels;
+using System.Collections.ObjectModel;
 
 namespace EnterSpace.Models
 {
@@ -13,10 +14,35 @@ namespace EnterSpace.Models
         DAL.Baza db = new DAL.Baza();
         public MainWindowViewModel parent { get; set; }
 
+        private ObservableCollection<DAL.Uposlenik> listaUposlenika;
+        public ObservableCollection<DAL.Uposlenik> Uposlenici
+        {
+            get { return listaUposlenika; }
+            set
+            {
+                listaUposlenika = value;
+            }
+        }
+
+        private ObservableCollection<DAL.Ponuda> listaPonuda;
+        public ObservableCollection<DAL.Ponuda> Ponude
+        {
+            get { return listaPonuda; }
+            set
+            {
+                listaPonuda = value;
+            }
+        }
+
         public DirektorViewModel(MainWindowViewModel P)
         {
             parent = P;
             var uposlenici = db.Uposlenici.ToList();
+            listaUposlenika = new ObservableCollection<DAL.Uposlenik>(uposlenici);
+
+            var ponude = db.Ponude.ToList();
+            listaPonuda = new ObservableCollection<DAL.Ponuda>(ponude);
+
             uposlenik = new DAL.Uposlenik();
             ponuda = new DAL.Ponuda();
             _ispisiUposlenike();
