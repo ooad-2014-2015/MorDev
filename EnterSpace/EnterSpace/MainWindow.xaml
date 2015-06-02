@@ -175,7 +175,7 @@
             </Button.Template>
         </Button>
 
-        <Button Content="" Margin="606,472,371,201" RenderTransformOrigin="-3.767,1.733" >
+        <Button Margin="606,472,371,201" RenderTransformOrigin="-3.767,1.733"  Command="{Binding MjesecPonuda}">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Grid>
@@ -190,9 +190,16 @@
                     </Grid>
                 </ControlTemplate>
             </Button.Template>
+            <TextBlock TextWrapping="Wrap" Text="TextBlock"/>
         </Button>
         <StackPanel HorizontalAlignment="Left" Height="100" Margin="482,313,0,0" VerticalAlignment="Top" Width="100"/>
-        <StackPanel HorizontalAlignment="Left" Height="161" Margin="25,15,0,0" VerticalAlignment="Top" Width="557"/>
+        <StackPanel HorizontalAlignment="Left" Height="161" Margin="25,15,0,0" VerticalAlignment="Top" Width="557">
+            <TextBox HorizontalAlignment="Left" Height="142" Margin="10,0,0,0" TextWrapping="Wrap" Text="{Binding TekstPonude, Mode=TwoWay}" Width="537">
+                <TextBox.Background>
+                    <ImageBrush/>
+                </TextBox.Background>
+            </TextBox>
+        </StackPanel>
         <GroupBox Header="" HorizontalAlignment="Left" Height="66" Margin="876,433,0,0" VerticalAlignment="Top" Width="193">
             <Button Content="Oglas za posao" Background="Gray" HorizontalAlignment="Left" Height="35" Margin="25,2,0,0" VerticalAlignment="Top" Width="125" Command="{Binding Oglas}"  />
         </GroupBox>

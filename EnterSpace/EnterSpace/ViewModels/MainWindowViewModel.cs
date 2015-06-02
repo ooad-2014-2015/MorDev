@@ -25,6 +25,7 @@ namespace EnterSpace
 
 #region deklaracija atributa
         string username, pasword;
+        string TextPonude;
         Klijent klijent;
         DAL.Baza db = new DAL.Baza();
 
@@ -54,6 +55,8 @@ namespace EnterSpace
         public ICommand Prijava { get; set; }
         public ICommand Izbor { get; set; }
         public ICommand UserLogin { get; set; }
+        public ICommand MjesecPonuda { get; set; }
+
 #endregion
 #region konstruktor
         public MainWindowViewModel()
@@ -62,7 +65,7 @@ namespace EnterSpace
             Oglas = new RelayCommand(_prikaziOglasFormu);
             Prijava = new RelayCommand(_prikaziFormuZaPrijavu);
             Izbor = new RelayCommand(_prikaziFormuMiliD);
-
+            MjesecPonuda = new RelayCommand(_prikaziPonudeZaMjesec);
 
             pZaPosaoViewModel = new PrijavaZaPosaoViewModel(this);
             pKorisnikaViewModel = new PrijavaKorisnikaViewModel(this);
@@ -79,6 +82,11 @@ namespace EnterSpace
             nit.IsBackground = true;
             nit.Start(); 
 
+        }
+
+        private void _prikaziPonudeZaMjesec(object obj)
+        {
+            TextPonude = "Medeni mjesec na Mjesecu";
         }
 #endregion
 
