@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="EnterSpaceGuide.AtrakcijaKontrola"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="460" d:DesignWidth="420">
+    
+    <Grid x:Name="LayoutRoot" Background="Purple">
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="slikaAtrakcije" Grid.Column="0" Height="200" Width="250"/>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Center" Orientation="Vertical">
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock Text="dan: " HorizontalAlignment="Center" Margin="0, 60, 5, 0"/>
+                        <TextBlock x:Name="danAtrakcije" HorizontalAlignment="Center" Margin="0, 60, 0,0" Text="dan: "/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Center" Orientation="Horizontal">
+       
+                        <TextBlock x:Name="vrijemeAtrakcije" HorizontalAlignment="Center" Margin="0, 15, 0, 0" Text="00:00"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <StackPanel Grid.Row="1" Orientation="Vertical" Margin="10, 10, 10, 0">
+                <TextBlock Text="opis: " HorizontalAlignment="Left" FontSize="15"/>
+                <TextBlock x:Name="opisAtrakcije" HorizontalAlignment="Left" FontSize="15" Text="ovo je opis atrak" TextWrapping="Wrap" />
+            </StackPanel>
+        </Grid>
+        </Grid>
+</UserControl>

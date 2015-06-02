@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage
-    x:Class="EnterSpaceGuide.LogInPage"
+    x:Class="EnterSpaceGuide.ProblemPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -21,29 +21,29 @@
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+        <StackPanel Grid.Row="0" Margin="10,10,0,0">
+            <StackPanel Orientation="Horizontal">
             <TextBlock Text="EnterSpace Guide" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="Log in" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="korisnik" Style="{StaticResource PhoneTextNormalStyle}" HorizontalAlignment="Right"/>
+            </StackPanel>
+            <TextBlock Text="Pijava problema" Style="{StaticResource PhoneTextTitle1Style}" FontSize="60"/>
         </StackPanel>
+        
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0" x:Name="problemTextBox" Height="500" Margin="10, 10, 10, 10"/>
+            <StackPanel Margin="0, 30, 0, 0" Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button x:Name="odustaniButton" Content="Odustani" Width="210"/>
+                <Button x:Name="prijaviButton" Content="Prijavi" Width="210" Click="prijaviButton_Click"/>
+            </StackPanel>
+        </Grid>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Grid x:Name="textPolja">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="240"/>
-                    <RowDefinition Height="85"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <StackPanel x:Name="user" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal">
-                    <TextBlock Text="user: " VerticalAlignment="Bottom"  Margin="0,0,0,25"/>
-                    <TextBox x:Name="userTextBox" Width="360"/>
-                </StackPanel>
-                <StackPanel x:Name="pass" Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Top">
-                    <TextBlock Text="pass: " VerticalAlignment="Bottom" Margin="0,0,0,25"/>
-                    <PasswordBox x:Name="passTextBox" Width="360"/>
-                </StackPanel>
-                <Button x:Name="logInButton" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" Content="Log in" Width="200" Click="logInButton_Click"/>
-            </Grid>
+
         </Grid>
     </Grid>
 
