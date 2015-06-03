@@ -22,10 +22,15 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="10,10,0,0">
-            <StackPanel Orientation="Horizontal">
-            <TextBlock Text="EnterSpace Guide" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="korisnik" Style="{StaticResource PhoneTextNormalStyle}" HorizontalAlignment="Right"/>
-            </StackPanel>
+            <Grid Grid.Row="0" Margin="0, 0, 10, 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="EnterSpace Guide" Style="{StaticResource PhoneTextNormalStyle}" Margin="10,0, 0, 0"/>
+                <TextBlock Grid.Column="1" x:Name="korisnik" HorizontalAlignment="Right"/>
+            </Grid>
             <TextBlock Text="Pijava problema" Style="{StaticResource PhoneTextTitle1Style}" FontSize="60"/>
         </StackPanel>
         
@@ -34,17 +39,14 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <TextBox Grid.Row="0" x:Name="problemTextBox" Height="500" Margin="10, 10, 10, 10"/>
-            <StackPanel Margin="0, 30, 0, 0" Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal">
-                <Button x:Name="odustaniButton" Content="Odustani" Width="210"/>
+            <TextBox Grid.Row="0" x:Name="problemTextBox" TextWrapping="Wrap" Height="500" Margin="10, 10, 10, 10"/>
+            <StackPanel Margin="0, 10, 0, 0" Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button x:Name="odustaniButton" Content="Odustani" Width="210" Click="odustaniButton_Click"/>
                 <Button x:Name="prijaviButton" Content="Prijavi" Width="210" Click="prijaviButton_Click"/>
             </StackPanel>
         </Grid>
 
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
-        </Grid>
+     
     </Grid>
 
 </phone:PhoneApplicationPage>

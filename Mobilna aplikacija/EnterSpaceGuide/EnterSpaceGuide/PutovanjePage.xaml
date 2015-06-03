@@ -21,10 +21,15 @@
         </Grid.RowDefinitions>
 
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="10,10,0,0">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="EnterSpace Guide" Style="{StaticResource PhoneTextNormalStyle}" Margin="10,0, 0, 0"/>
-                <TextBlock x:Name="korisnik" Style="{StaticResource PhoneTextNormalStyle}" HorizontalAlignment="Right"/>
-            </StackPanel>
+            <Grid Grid.Row="0" Margin="0, 0, 10, 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock Grid.Column="0" Text="EnterSpace Guide" Style="{StaticResource PhoneTextNormalStyle}" Margin="10,0, 0, 0"/>
+                <TextBlock Grid.Column="1" x:Name="korisnik" HorizontalAlignment="Right"/>
+            </Grid>
             <TextBlock x:Name="planeta" Text="" Margin="10,0,0,0" Style="{StaticResource PhoneTextNormalStyle}" FontSize="25"/>
             <TextBlock x:Name="nazivPutovanja" Margin="10, 0, 0, 0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="60" Text="" FontWeight="Bold"/>
         </StackPanel>
@@ -39,8 +44,8 @@
             <phone:Pivot x:Name="atrakcijePivot" HorizontalAlignment="Left" Height="500"  Title="Atrakcije" VerticalAlignment="Top" Width="460" UseLayoutRounding="False">
             </phone:Pivot>
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Width="420">
-                <Button x:Name="odjavaButton" Content="Odjava" VerticalAlignment="Bottom" Width="210" />
-                <Button x:Name="problemButon" Content="Prijavi problem" VerticalAlignment="Bottom" Width="210"/>
+                <Button x:Name="odjavaButton" Content="Odjava"  VerticalAlignment="Bottom" Width="210" Click="odjavaButton_Click" />
+                <Button x:Name="problemButon" Content="Prijavi problem" VerticalAlignment="Bottom" Width="210" Click="problemButon_Click"/>
             </StackPanel>
         </Grid>
     </Grid>

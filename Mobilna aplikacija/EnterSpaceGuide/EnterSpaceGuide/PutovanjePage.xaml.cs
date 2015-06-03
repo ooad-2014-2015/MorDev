@@ -45,9 +45,9 @@ namespace EnterSpaceGuide
                     db.CreateIfNotExists();
                     try
                     {
-                        Table<Korisnici> korisnici = db.GetTable<Korisnici>();
-                        var korisniciUpit = from k in korisnici.ToList() select k;
-                        var korisnikDB = korisniciUpit.FirstOrDefault(kor => kor.Id == KorisnikID);
+                        var korisnikDB = (from f in db.Korisnici
+                                          where (f.Id == KorisnikID)
+                                          select f).FirstOrDefault();                                          
                         korisnik.Text = korisnikDB.KorisnickoIme.ToString() + "[" + korisnikDB.Ime.ToString() + " " + korisnikDB.Prezime.ToString() + "]";
                     }
                     catch (Exception omaska)
@@ -63,9 +63,9 @@ namespace EnterSpaceGuide
                     db.CreateIfNotExists();
                     try
                     {
-                        Table<Putovanja> putovanja = db.GetTable<Putovanja>();
-                        var putovanjaUpit = from p in putovanja.ToList() select p;
-                        var putovanjeDB = putovanjaUpit.FirstOrDefault(put => put.Id == PutovanjeID);
+                        var putovanjeDB = (from f in db.Putovanja
+                                           where (f.Id == PutovanjeID)
+                                           select f).FirstOrDefault();
                         nazivPutovanja.Text = putovanjeDB.Naziv.ToString();
                         planeta.Text = putovanjeDB.Planeta.ToString();
                     }
@@ -87,13 +87,11 @@ namespace EnterSpaceGuide
                     db.CreateIfNotExists();
                     try
                     {
-                        // Poboljsati sa boljim upitom
+                        
                         Table<Atrakcije> atrakcije = db.GetTable<Atrakcije>();
-                        var atrakcijeUpit = from a in atrakcije.ToList() select a;
+                        var atrakcijeUpit = from a in atrakcije.ToList() where(a.Id_putovanja == PutovanjeID) select a;
                         foreach (var atrakcija in atrakcijeUpit)
                         {
-                            if (atrakcija.Id_putovanja == PutovanjeID)
-                            {
                                 PivotItem pivot = new PivotItem();
                                 AtrakcijaKontrola atrakcijaKontrola = new AtrakcijaKontrola();
                                 atrakcijaKontrola.vrijemeAtrakcije.Text = atrakcija.Vrijeme.ToShortTimeString();
@@ -111,8 +109,6 @@ namespace EnterSpaceGuide
                                 atrakcijePivot.Items.Add(pivot);
                             }
 
-                        }
-
                     }
                     catch (Exception omaska)
                     {
@@ -120,6 +116,20 @@ namespace EnterSpaceGuide
                     }
                 }
             }
+        }
+
+        private void problemButon_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/ProblemPage.xaml?korID=" + KorisnikID, UriKind.Relative));
+        }
+
+        private void odjavaButton_Click(object sender, RoutedEventArgs e)
+        {
+            while (NavigationService.CanGoBack)
+            {
+                NavigationService.RemoveBackEntry();
+            }
+            NavigationService.Navigate(new Uri("/LogInPage.xaml", UriKind.Relative));
         }
     }
 }
