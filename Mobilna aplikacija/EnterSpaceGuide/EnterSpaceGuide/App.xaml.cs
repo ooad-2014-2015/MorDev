@@ -31,7 +31,6 @@ namespace EnterSpaceGuide
 
             // Phone-specific initialization
             InitializePhoneApplication();
-
             // Language display initialization
             InitializeLanguage();
 

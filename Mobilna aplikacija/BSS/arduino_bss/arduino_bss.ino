@@ -30,16 +30,15 @@ void posaljiViaBT();
 void setup() {
   Serial.begin(4800); 
   bt.begin(9600);
-  Serial.println("DHT22 && BMP180 test!"); 
   dht.begin();
   pritisak.begin();
 }
 
 void loop() {
-  delay(2000);
+  delay(100);
   izmjeri();
-  posaljiNaPC();
   posaljiViaBT();
+  posaljiNaPC();
 }
 
 void izmjeri() {
@@ -96,21 +95,19 @@ double getPressure()
 }
 
 void posaljiViaBT(){
-  bt.print("T");
+  bt.print('T');
   bt.print(temperatura);
-  bt.println();
- // bt.print("\n");
-  bt.print("R");
+  delay(50);
+
+  bt.print('V');
   bt.print(vlaznost);
-  bt.println();
- // bt.print("\n");
-  bt.print("P");
+  delay(50);
+  
+  bt.print('P');
   bt.print(atmosferskiPritisak);
-  bt.println();
- // bt.print("\n");
-  bt.print("N");
+  delay(50);
+ 
+  bt.print('N');
   bt.print(nadmorskaVisina);
-  bt.println();
-  bt.println();
-  //bt.print("\n");
-}
+  delay(50);
+ }

@@ -80,8 +80,7 @@ namespace EnterSpaceGuide
 
         private void popuniPivot()
         {
-            if (atrakcijePivot.Items.Count == 0)
-            {
+                atrakcijePivot.Items.Clear();           
                 using (ESGLokalnaBazaContext db = new ESGLokalnaBazaContext(ESGLokalnaBazaContext.ConnectionString))
                 {
                     db.CreateIfNotExists();
@@ -114,7 +113,6 @@ namespace EnterSpaceGuide
                     {
 
                     }
-                }
             }
         }
 

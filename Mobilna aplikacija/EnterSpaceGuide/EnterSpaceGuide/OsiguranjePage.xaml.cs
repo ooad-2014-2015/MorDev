@@ -20,6 +20,7 @@ using Windows.Storage.Streams;
 using Windows.Phone.Speech.Recognition;
 using Windows.Phone.Speech.Synthesis;
 using System.Windows.Navigation;
+using System.Windows.Media;
 
 namespace EnterSpaceGuide
 {
@@ -27,8 +28,7 @@ namespace EnterSpaceGuide
     {
         public int KorisnikID { get; set; }
         StreamSocket BTSocket;
-        string BT_Received = string.Empty;
-
+        
         public OsiguranjePage()
         {
             InitializeComponent();
@@ -43,6 +43,11 @@ namespace EnterSpaceGuide
             popuniIme();
         }
 
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            BTSocket.Dispose();
+            upareniUredjaji.Items.Clear();
+        }
         private void popuniIme()
         {
             if (korisnik.Text == string.Empty)
@@ -89,11 +94,74 @@ namespace EnterSpaceGuide
             }
             else
             {
-                PeerFinder.AlternateIdentities["Bluetooth:Paired"] = "";
-                var PF = await PeerFinder.FindAllPeersAsync();
-                BTSocket = new StreamSocket();
-                await BTSocket.ConnectAsync(PF[upareniUredjaji.SelectedIndex].HostName, "1");
+                if (BTSocket == null)
+                {
+                    PeerFinder.AlternateIdentities["Bluetooth:Paired"] = "";
+                    var PF = await PeerFinder.FindAllPeersAsync();
+                    BTSocket = new StreamSocket();
+                    if(PF[upareniUredjaji.SelectedIndex].DisplayName.Contains("HC"))
+                    {
+                    await BTSocket.ConnectAsync(PF[upareniUredjaji.SelectedIndex].HostName, "1");
+                    UcitajPodatke(BTSocket);
+                    }
+                }
             }
+        }
+
+        private async void UcitajPodatke(StreamSocket socket)
+        {
+            try
+            {
+                byte[] poruka = new byte[6];
+                byte[] key = new byte[1];
+                await socket.InputStream.ReadAsync(key.AsBuffer(), 1, InputStreamOptions.Partial);
+                if ((char)key[0] == 'T')
+                {
+                    await socket.InputStream.ReadAsync(poruka.AsBuffer(), 5, InputStreamOptions.Partial);
+                    string str = Encoding.UTF8.GetString(poruka, 0, poruka.Length);
+                    temperaturaTextBox.Text = str;
+                    if (float.Parse(str) > 30)
+                    {
+                        LayoutRoot.Background = new SolidColorBrush(Colors.Red);
+                    }
+                    else
+                    {
+                        LayoutRoot.Background = new SolidColorBrush(Colors.Purple);
+                    }
+                }
+                else if ((char)key[0] == 'V')
+                {
+                    await socket.InputStream.ReadAsync(poruka.AsBuffer(), 5, InputStreamOptions.Partial);
+                    string str = Encoding.UTF8.GetString(poruka, 0, poruka.Length);
+                    vlaznostTextBox.Text = str;
+                }
+                else if ((char)key[0] == 'P')
+                {
+                    await socket.InputStream.ReadAsync(poruka.AsBuffer(), 6, InputStreamOptions.Partial);
+                    string str = Encoding.UTF8.GetString(poruka, 0, poruka.Length);
+                    pritisakTextBox.Text = str;
+                }
+                else if ((char)key[0] == 'N')
+                {
+                    await socket.InputStream.ReadAsync(poruka.AsBuffer(), 6, InputStreamOptions.Partial);
+                    string str = Encoding.UTF8.GetString(poruka, 0, poruka.Length);
+                    visinaTextBox.Text = str;
+                
+                }
+                
+                UcitajPodatke(socket); 
+            }
+            catch (Exception omaska)
+            { }
+        }
+
+        private void odjavaButton_Click(object sender, RoutedEventArgs e)
+        {
+            while (NavigationService.CanGoBack)
+            {
+                NavigationService.RemoveBackEntry();
+            }
+            NavigationService.Navigate(new Uri("/LogInPage.xaml", UriKind.Relative));
         }
     }
 }
