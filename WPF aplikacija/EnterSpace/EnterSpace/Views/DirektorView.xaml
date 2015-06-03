@@ -1,0 +1,21 @@
+﻿<Window x:Class="EnterSpace.DirektorView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Direktor" Height="375" Width="700">
+    <Grid Margin="0,0,0,13">
+        <TabControl HorizontalAlignment="Left" Height="310" Margin="10,21,0,0" VerticalAlignment="Top" Width="672"  >
+            <TabItem Header="Ponude">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Sve ponude:" FontSize="11" HorizontalAlignment="Left" Height="29" Margin="19,19,0,0" VerticalAlignment="Top" Width="104"/>
+                    <DataGrid Name="dataGrid2" DataContext="{Binding Path=Ponude}" ItemsSource="{Binding}" CanUserAddRows="False" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Uposlenici">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Svi uposlenici:" FontSize="11" HorizontalAlignment="Left" Height="29" Margin="19,19,0,0" VerticalAlignment="Top" Width="104"/>
+                    <DataGrid Name="dataGrid1" DataContext="{Binding Path=Uposlenici}" ItemsSource="{Binding}" CanUserAddRows="False" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
