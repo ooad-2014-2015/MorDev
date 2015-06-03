@@ -92,6 +92,7 @@ namespace EnterSpace
         public ICommand SaturnKlik { get; set; }
         public ICommand UranKlik { get; set; }
         public ICommand NeptunKlik { get; set; }
+        public ICommand HelpMe { get; set; }
 
 
 #endregion
@@ -110,7 +111,8 @@ namespace EnterSpace
             JupiterKlik = new RelayCommand(_metodaJupiter);
             SaturnKlik = new RelayCommand(_metodaSaturn);
             NeptunKlik = new RelayCommand(_metodaNeptun);
-            UranKlik = new RelayCommand(_metodaUran); 
+            UranKlik = new RelayCommand(_metodaUran);
+            HelpMe = new RelayCommand(_metodaHelp);
             #endregion
 
             pZaPosaoViewModel = new PrijavaZaPosaoViewModel(this);
@@ -132,6 +134,14 @@ namespace EnterSpace
             nit.IsBackground = true;
             nit.Start(); 
 
+        }
+
+        private void _metodaHelp(object obj)
+        {
+            MessageBox.Show("- Ukoliko nemate korisnicki racun, pritisnite SignUp te popunite svoje podatke i pritisnite dugme posalji. \n"+
+                "- Da biste rezervisali putovanje morate se logovati. Unesite korisnicko ime i password te pritisnite dugme LogIn \n" +
+                "- Pritisnite mišem planetu na koju zelite putovati i potvrdite rezervaciju. \n" +
+                "- Ukoliko zelite prijaviti se za posao pritisnite dugme Oglas za posao ");
         }
 
 
