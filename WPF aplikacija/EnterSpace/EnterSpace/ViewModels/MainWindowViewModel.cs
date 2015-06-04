@@ -156,7 +156,7 @@ namespace EnterSpace
             int idPlanete=1;
             foreach (var pl in _planete)
             {
-                if (pl.Naziv == imePlanete) idPlanete = pl.Id;
+                if (pl.Naziv == imePlanete) {idPlanete = pl.Id; }
             }
 
 
@@ -165,6 +165,7 @@ namespace EnterSpace
                 
                 if (p.Planeta.Id == idPlanete) 
                 {
+     
                     var novaRezervacija = new DAL.Rezervacija();
                     novaRezervacija.Ponuda = p;
                     novaRezervacija.DatumPolaska = p.datumPolaska;
@@ -177,8 +178,13 @@ namespace EnterSpace
                             novaRezervacija.Klijent = kl; 
                         }
                     }
+                    int brrez = 0;
+                    foreach (var rez in _rezervacije)
+                    {
+                        if (rez.Ponuda == p) brrez++;
+                    }
 
-                    if (Convert.ToInt32(_ponude.Count) == p.Kapacitet)
+                    if (brrez< p.Kapacitet)
                     {
                         db.Rezervacije.Add(novaRezervacija);
                         db.SaveChanges();
@@ -246,7 +252,7 @@ namespace EnterSpace
                 }
                 else
                 {
-                    MessageBox.Show(_kreirajRezervaciju(" Veneru"));
+                    MessageBox.Show(_kreirajRezervaciju("Venera"));
                 }
 
             }

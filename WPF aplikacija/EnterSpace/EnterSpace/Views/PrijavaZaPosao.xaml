@@ -6,10 +6,10 @@
     <Grid HorizontalAlignment="Left" Width="389" RenderTransformOrigin="0.5,0.523" Margin="0,0,0,7">
         <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <GroupBox Header="" HorizontalAlignment="Left" Margin="20,27,0,32" Width="359"/>
-        <TextBox Name="ime" HorizontalAlignment="Left" Height="26" Margin="148,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Text="{Binding Path=Uposlenik.Ime, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="148,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Text="{Binding Path=Uposlenik.Prezime, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="148,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Text="{Binding Path=Uposlenik.Broj_telefona, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="148,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Text="{Binding Path=Uposlenik.VrstaPosla, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <TextBox Name="ime" TabIndex="1" HorizontalAlignment="Left" Height="26" Margin="148,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Text="{Binding Path=Uposlenik.Ime, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <TextBox HorizontalAlignment="Left" TabIndex="2" Height="26" Margin="148,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Text="{Binding Path=Uposlenik.Prezime, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <TextBox HorizontalAlignment="Left" Height="30" TabIndex="4" Margin="148,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Text="{Binding Path=Uposlenik.Broj_telefona, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <TextBox HorizontalAlignment="Left" TabIndex="5" Height="30" Margin="148,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Text="{Binding Path=Uposlenik.VrstaPosla, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
         <Label Content="Ime:" HorizontalAlignment="Left" Height="26" Margin="33,38,0,0" VerticalAlignment="Top" Width="126"/>
         <Label Content="Prezime:" HorizontalAlignment="Left" Height="26" Margin="33,96,0,0" VerticalAlignment="Top" Width="63"/>
         <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Top"/>
@@ -17,9 +17,9 @@
         <Label Content="CV:" HorizontalAlignment="Left" Height="26" Margin="34,350,0,0" VerticalAlignment="Top" Width="80"/>
         <Button Content="Pošalji" HorizontalAlignment="Left" Height="26" Margin="246,510,0,0" VerticalAlignment="Top" Width="105"  Command="{Binding Posalji}"/>
         <Label Content="Tip posla:" HorizontalAlignment="Left" Height="25" Margin="34,272,0,0" VerticalAlignment="Top" Width="71"/>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="148,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Text="{Binding Path=Uposlenik.Email, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <TextBox HorizontalAlignment="Left" TabIndex="3" Height="34" Margin="148,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Text="{Binding Path=Uposlenik.Email, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
         <Label Content="Email:" HorizontalAlignment="Left" Height="28" Margin="34,152,0,0" VerticalAlignment="Top" Width="70"/>
-        <TextBox HorizontalAlignment="Left" Height="134" Margin="148,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Text="{Binding Path=Uposlenik.CV, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox HorizontalAlignment="Left" TabIndex="6" Height="134" Margin="148,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Text="{Binding Path=Uposlenik.CV, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         
     </Grid>
 </Window>
