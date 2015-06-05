@@ -20,7 +20,9 @@ namespace EnterSpace.Models
 
         DAL.Baza db = new DAL.Baza();
         public ICommand UnosKlijenta { get; set; }
+
         
+
 
         private DAL.Klijent klijent;
 	    public DAL.Klijent Klijent
@@ -48,24 +50,35 @@ namespace EnterSpace.Models
             klijent.Username = Klijent.Ime+Klijent.Prezime;
             klijent.Password = Klijent.Ime + Klijent.Prezime+klijent.Id;
 
-            EnterSpace.Models.Klijent k = new EnterSpace.Models.Klijent(
-            klijent.Id,
+
+            kl = new EnterSpace.Models.Klijent(klijent.Id,
             klijent.Ime,
             klijent.Prezime,
             klijent.Email,
             klijent.DatumRegistracije.ToString(),
-            klijent.Username ,
-            klijent.Password );
+            klijent.Username,
+            klijent.Password);
 
-            
+            if (kl.IsValid)
+            {
 
-            db.Klijenti.Add(klijent);
-            db.SaveChanges();
-            System.Windows.MessageBox.Show("Vasi podaci su uspjesno uneseni u bazu!");
+                db.Klijenti.Add(klijent);
+                db.SaveChanges();
+                System.Windows.MessageBox.Show("Vasi podaci su uspjesno uneseni u bazu!");
+            }
+            else
+                System.Windows.MessageBox.Show("Niste unijeli sve potrebne podatke!");
             
         }
-       
 
+        private EnterSpace.Models.Klijent kl;
+
+        public EnterSpace.Models.Klijent Kl
+        {
+            get { return kl; }
+            set { kl = value; }
+        }
+        
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
         {

@@ -50,6 +50,8 @@ namespace EnterSpace.Models
             db.SaveChanges();
             System.Windows.MessageBox.Show("Prijava poslana! Sve potrebne informacije dobit cete na Vas email!");
             
+           
+            
         }
 
 
@@ -58,6 +60,15 @@ namespace EnterSpace.Models
             get { return prijavnica; }
             set { prijavnica = value; }
         }
+
+        private EnterSpace.Models.Uposlenik u;
+
+        public EnterSpace.Models.Uposlenik Up
+        {
+            get { return u; }
+            set { u = value; }
+        }
+        
 
         //impl interfacea
 
